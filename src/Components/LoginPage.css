@@ -1,0 +1,73 @@
+
+.emp1{
+    width: 200px;
+} 
+ .login1{
+     font-size: 22px;
+     margin-top: 29px;
+     margin-left:79px;
+     color: brown;
+ }
+
+ .lockimg{
+     height: 30px;
+     width: 30px;
+     margin-top: 5px;
+     margin-left: 74px;
+ }
+ .humanimg{
+    height: 30px;
+    width: 30px;
+    margin-top: 5px;
+    margin-left: 90px;
+ }
+.pwd{
+    margin-left: 26px;
+    margin-top: 10px;
+    
+}
+.emp{
+    margin-left: 3px;
+    margin-top: 64px;
+    
+}
+.logo1{
+    height: 100px;
+    width: 100px; 
+    border-radius: 100%; 
+    margin-top: 53px;
+    margin-left: 57px;
+}
+.login{
+    margin-top: 35px; 
+    margin-left: 125px; 
+    width: 250px;
+    color: white;
+    background-color:#1072e3;
+}
+.header1{
+    margin-left: 279px;
+    margin-top: 11px;
+    font-size:13px
+}
+.header2{
+    margin-right: 45px;
+    font-size:13px
+}
+.emp1{
+    border: none;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-color:gray;
+    width: 250px;
+
+}
+.pwd1{
+    border: none;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-color:gray;
+    margin-top: 20px;
+    width: 250px;
+}
+
