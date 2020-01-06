@@ -1,4 +1,6 @@
-
+.logPage{
+    background-color: white;
+}
 .emp1{
     width: 200px;
 } 
@@ -36,7 +38,7 @@
     width: 100px; 
     border-radius: 100%; 
     margin-top: 53px;
-    margin-left: 57px;
+    margin-left: 82px;
 }
 .login{
     margin-top: 35px; 

@@ -1,0 +1,18 @@
+#leavebal{
+  margin-left: 2px;
+    background-color: lightblue;
+    width: 377px;
+    
+}
+
+.leaveatt{
+  display: grid;
+  grid-template-columns: 43px 612px;
+  font-size: 13px;
+}
+.container5{
+  background-color: white;
+  margin-right: 873px;
+  margin-left: 22px;
+  padding: 10px;
+}

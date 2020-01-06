@@ -13,13 +13,19 @@ class HomePage extends Component {
           <div>
             <Navbar/>
           </div><br></br>
+
+          <div className="container2">
+            <label className="feed">Feeds</label><br></br>
+            <input className="holder" type="text" placeholder="  "></input><br></br>
+            <button className="button">Update</button>
+          </div>
          
           <input className="user" type="text" placeholder=" "></input>
           <img className="humanimg1" src={logo5}></img>
           <div class="vertical-menu">
           <a className="feed1" href="#">Feeds</a>
-          <a className="feed1" href="#">Leave</a>
-          <a className="feed1" href="#">Apply to Leave</a>
+          <a className="feed1" href="LeaveSummary">Leave</a>
+          <a className="feed1" href="LeaveForm">Apply to Leave</a>
           </div>
           {/* <div>
           <form class="container1">

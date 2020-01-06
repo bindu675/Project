@@ -1,0 +1,42 @@
+.sidebar{
+    margin-right: 1000px;
+}
+.leaves{
+    margin-right:300px;
+    width: 250px;
+    background-color: white;
+    color: gray;
+    height: 31px;
+}
+.num{
+    margin-right:292px;
+    width: 250px;
+   
+}
+.session{
+    background-color: white;
+    color: gray;
+    width: 150px;
+    margin-left: 100px;
+}
+.session1{
+    margin-left: 80px;
+}
+.leaveapp{
+    margin-right:421px;
+}
+.leavetype{
+    margin-right:2px;
+}
+.num1{
+    margin-right: 34px;
+    width: 250px;
+}
+
+.session2{
+    width: 150px;
+    /* margin-left: 100px; */
+}
+.option{
+    width: 150px;
+}

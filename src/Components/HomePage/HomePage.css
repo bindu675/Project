@@ -2,6 +2,31 @@ body{
   background-color: #8ab3ed;
   background-image: radial-gradient(lightblue,#8e5ebd);
 }
+.container2{
+  height: 130px;
+  width: 500px;
+  background-color: white;
+  margin-left: 391px;
+}
+.feed{
+  margin-right: 439px;
+  font-size: 15px;
+  color: blue;
+  margin-top: 9px;
+}
+
+.holder{
+  width: 470px;
+  margin-right: 79px;
+  margin-left: 10px;
+}
+.button{
+  margin-top: 10px;
+  background-color:#1072e3;
+  color:white;
+  margin-left: 386px;
+}
+
 .vertical-menu {
     width: 200px;
     margin-top: 47px;
