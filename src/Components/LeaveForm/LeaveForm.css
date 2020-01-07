@@ -1,42 +1,66 @@
+.leaveform{
+  background-color: white;
+}
 .sidebar{
-    margin-right: 1000px;
+  margin-right: 1073px;
 }
 .leaves{
-    margin-right:300px;
-    width: 250px;
+    margin-right: 264px;
+    width: 341px;
     background-color: white;
     color: gray;
-    height: 31px;
+    height: 25px;
+    margin-left: 7px;
 }
-.num{
-    margin-right:292px;
-    width: 250px;
-   
-}
-.session{
-    background-color: white;
-    color: gray;
-    width: 150px;
-    margin-left: 100px;
-}
-.session1{
-    margin-left: 80px;
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 87px 342px 100px 318px 0px;
+    grid-template-rows: 30px 30px 30px;
+    grid-column-gap: 10px;
+    grid-row-gap: 20px;
+    margin-left: 285px;
 }
 .leaveapp{
-    margin-right:421px;
+  margin-left: 124px;
 }
 .leavetype{
     margin-right:2px;
 }
-.num1{
-    margin-right: 34px;
-    width: 250px;
-}
 
-.session2{
-    width: 150px;
-    /* margin-left: 100px; */
+.reason{
+    margin-left: 15px;
+    margin-right: 300px;
+    margin-top: -38px;
+    width: 283px;
+    height: 81px;
 }
-.option{
-    width: 150px;
+.contact{
+  margin-left: 20px;
+  margin-right: 388px;
+  width: 247px;
+  margin-top: 20px;
+}
+.holder5{
+  margin-left: 84px;
+  margin-right: 388px;
+  width: 247px;
+  margin-top: 20px;
+}
+#note{
+  margin-right: 241px;
+  margin-top: 10px;
+  font-size: 13px;
+}
+.apply{
+  background-color:#1072e3;
+  width: 109px;
+  margin-right: 210px;
+  border-radius: 30px;
+}
+#cancelbtn{
+  border-radius: 31px;
+  width: 109px;
+  margin-right: 206px;
+  margin-top: 10px;
 }
