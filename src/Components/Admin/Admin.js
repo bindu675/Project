@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
-import './HomePage.css'
+import './Admin.css'
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import logo5 from '../Navbar/humanimg.png'
 import logo7 from '../Navbar/homeimg1.jpeg'
-// import { Button, Nav } from 'react-bootstrap';
 
-class HomePage extends Component {
+class Admin extends Component {
     render() {
         return (
-         <div>
-          <div>
-            <Navbar/>
-          </div><br></br>
+            <div>
+                <div>
+                 <Navbar/>
+                </div><br></br>
 
           <div className="container2">
             <label className="feed">Feeds</label><br></br>
@@ -25,20 +24,24 @@ class HomePage extends Component {
           <div class="vertical-menu">
           <a className="feed1" href="#">Feeds</a>
           <a className="feed1" href="LeaveSummary">Leave</a>
-          <a className="feed1" href="LeaveForm">Apply to Leave</a>
+          <a className="feed1" href="LeaveDirectory">Employee_Leave_Details</a>
+          <a className="feed1" href="EmployeeDirectory">EmployeeDirectory</a>
           </div>
-         
+          
           <div class='container'>
             <div class="event1">To Events</div>
             <div class="day1">a day go</div>
             <div className="paragraph">Happy birthdy Arun Kumar M R,Have a great year ahead</div>
             <img className="homeimg1" src={logo7}></img>
           </div>
+          <div>
           <Footer/>
+          </div>
+          
         </div>
-        
+          
         );
     }
 }
 
-export default HomePage;
+export default Admin;

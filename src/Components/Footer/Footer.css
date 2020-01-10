@@ -28,8 +28,20 @@
 #footer2{
     width: 100%;
     height: 50px;
-    margin-top: 330px;
+    margin-top: 430px;
     background-color:#08476e;
-    color: white;
-    
+    color: white; 
+    position: fixed;
+}
+.footer3{
+    width: 100%;
+    height: 50px;
+    margin-top: 407px;
+    position: fixed;
+}
+.footer4{
+    width: 100%;
+    height: 50px;
+    margin-top: 500px;
+    position: fixed;
 }

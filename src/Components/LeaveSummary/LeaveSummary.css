@@ -15,16 +15,8 @@
   margin-left: 22px;
   padding: 5px;
   width: 395px;
-  
 }
-.container6{
-    display: grid;
-    grid-template-columns: 374px 6px;
-    background-color: white;
-    margin-left: 22px;
-    padding: 5px;
-    width: 395px;
-}
+
 .leavebal{
   margin-left: 49px;
   background-color: lightblue;
@@ -35,25 +27,19 @@
   font-size: 13px;
   color: black;
 }
+
 #contents{
   background-color: lightgray;
   margin-top: 5px;
   color: black;
 }
+
 #contents4{
   background-color: lightgray;
   margin-top: 5px;
   color: black;
 }
-#leavebal1{
-  background-color: lightblue;
-  width: 372px;
-  height: 24px;
-}
-.para6{
-  margin-top: -66px;
-  color:blue;
-}
+
 .container7{
   display: grid;
   grid-template-columns: 43px 298px;
@@ -62,21 +48,28 @@
   padding: 5px;
   width: 395px;
 }
+
 #leavebal6{
   background-color: lightblue;
   width: 372px;
   height: 24px;
 }
+
 .leaveatt6{
   display: grid;
   grid-template-columns: 42px 330px;
   font-size: 13px;
   color: gray;
 }
+
 #contents1{
   background-color: lightgray;
-  margin-top: -69px;
+  margin-top: 2px;
   height: 20px;
   color: black;
+}
+
+.apprbtn{
+  margin-left: 10px;
 }
   

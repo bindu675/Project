@@ -1,18 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import './LoginPage.css';
-import logo from './Navbar/img.jpg'
-import logo1 from '../Components/Navbar/imglock.png';
-import logo2 from './Navbar/humanimg.png';
+import './AdminLogin.css';
+import logo from '../Navbar/img.jpg'
+import logo1 from '../Navbar/imglock.png'
+import logo2 from '../Navbar/humanimg.png'
 import { SocialIcon } from 'react-social-icons';
 // import { Button, Nav } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Footer from './Footer/Footer';
-import Navbar from './Navbar/Navbar';
-import BrowserHistory from "./Utils/BrowserHistory";
+import Footer from '../Footer/Footer';
+import Navbar from '../Navbar/Navbar';
+import BrowserHistory from "../Utils/BrowserHistory";
+const axios = require('axios');
 // import { LoginAction } from '../Action/LoginAction';
 
-class LoginPage extends React.Component {
+class AdminLogin extends React.Component {
   
 //   constructor() {
 //     super();
@@ -82,8 +83,28 @@ class LoginPage extends React.Component {
 //     return formIsValid;
 //   }
   
-  onHandleClick(){
-    BrowserHistory.push("/HomePage");
+  login(){
+    debugger
+    const options = {
+      url: 'http://localhost:9001/admin_login',
+      method: 'POST',
+     data: {
+      EmployeeNo:"QW01",
+      password:"@hRsi02"
+      }
+    };
+    
+    axios(options)
+    console.log("hi")
+  //   axios.post('http://localhost:9001/admin_login',{
+  //     EmployeeNo:"QW01",
+  //     password:"@hRsi02"
+  //   })
+  // .then(function (response) {
+  //   // handle success
+  //   console.log(response);BrowserHistory.push("/Admin");
+  // })
+    
     }
   render() {
     return (
@@ -103,7 +124,7 @@ class LoginPage extends React.Component {
           <img className="lockimg" src={logo1}></img>
             <input className="pwd1"  type="password" name="password"  placeholder="password" /><br></br>
                 {/* <div>Password is required</div> */}   
-                <button className="login" onClick={this.onHandleClick}>Login</button>
+                <button className="login" onClick={this.login}>Login</button>
                 <p className="header1">or forgot Password</p>
                 <p className="header2">or sign in with</p>
         </form>
@@ -120,4 +141,4 @@ class LoginPage extends React.Component {
     } 
 }
 
-export default LoginPage;
+export default AdminLogin;
