@@ -51,8 +51,8 @@
 
 #leavebal6{
   background-color: lightblue;
-  width: 372px;
-  height: 24px;
+    width: 372px;
+    height: 25px;
 }
 
 .leaveatt6{
@@ -63,10 +63,11 @@
 }
 
 #contents1{
-  background-color: lightgray;
-  margin-top: 2px;
-  height: 20px;
-  color: black;
+    background-color: lightgray;
+    margin-top: 2px;
+    height: 20px;
+    color: black;
+    margin-left: 1px;
 }
 
 .apprbtn{

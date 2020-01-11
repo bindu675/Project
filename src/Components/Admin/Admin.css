@@ -74,38 +74,39 @@
       width: 200px;
       background-color:lightgray;
     }
-    .homeimg1{
+    .homeimg12{
       height: 350px;
       width: 465px;
       margin-top: -368px;
       margin-left:5px;
     }
-    .paragraph{
-      font-size:15px;
-      margin-bottom:367px;
-      margin-right:5px;
-      color:black;
+    .paragraph12{
+      margin-top: 23px;
+     font-size: 15px;
+     margin-bottom: 367px;
+     margin-right: 5px;
+     color: black;
     }
-   .container{
-          display: grid;
-          background-color: white;
-          height: 500px;
-          width: 500px;
-          margin-top: -148px
+   .admincontainer{
+      background-color: white;
+      height: 500px;
+      width: 572px;
+      margin-left: 400px;
+      margin-top: -144px
    }
-   .event1{
+   .event2{
      margin-right:401px;
      font-size:15px;
      color: gray;
   
    }
-   .day1{
+   #day2{
      margin-left:403px;
-     margin-top:-45px;
+     margin-top: -23px;
      font-size:15px;
      color: gray;
    }
-   .container1{
+   /* .container1{
         margin-bottom: 10px;
         margin-left:20px;
-   }
+   } */

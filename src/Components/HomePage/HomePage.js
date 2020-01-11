@@ -14,7 +14,7 @@ class HomePage extends Component {
             <Navbar/>
           </div><br></br>
 
-          <div className="container2">
+          <div className="container3">
             <label className="feed">Feeds</label><br></br>
             <input className="holder" type="text" placeholder="  "></input><br></br>
             <button className="button">Update</button>
@@ -28,9 +28,17 @@ class HomePage extends Component {
           <a className="feed1" href="LeaveForm">Apply to Leave</a>
           </div>
          
-          <div class='container'>
-            <div class="event1">To Events</div>
-            <div class="day1">a day go</div>
+          <div class='eventcontainer'>
+            <div class="row"> 
+            <div class="col" id="event1">
+              To Events
+            </div>
+            <div class="col" id="day1" >
+              a day go
+            </div>
+            </div>
+            {/* <div class="event1">To Events</div>
+            <div class="day1">a day go</div> */}
             <div className="paragraph">Happy birthdy Arun Kumar M R,Have a great year ahead</div>
             <img className="homeimg1" src={logo7}></img>
           </div>

@@ -34,14 +34,14 @@ class LeaveSummary extends Component {
                   <div id="leavebal6">Leave Summary-2020</div><br></br>
                   <div className="leaveatt6">
                   <div id="contents1">SL</div>
-                  <div id="contents1">19 Dec 2020 am not feeling well<button className="apprbtn">Approve</button><button>Reject</button></div>
+                  <div id="contents1">19 Dec 2020 am not feeling well</div>
                   <div id="contents1">SL</div>
                   <div id="contents1">20 Dec 2020 Have personal work</div>
                   <div id="contents1">SL</div>
                   <div id="contents1">27 Dec 2020 am not feeling well</div>
                  </div>
                 </div> 
-
+                {/* <button className="apprbtn">Approve</button><button>Reject</button> */}
               </div>
               <div id="footer2">
                 <Footer/>

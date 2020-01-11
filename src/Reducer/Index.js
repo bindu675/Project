@@ -1,7 +1,17 @@
-// ineReducers } from 'redux';
-// import AddEmployeeReducer from './AddEmployeeReducer';
-// import { comb
+// import {combineReducers } from 'redux';
+// import LoginReducer from './LoginReducer';
+// import AdminReducer from './AdminReducer';
+
 // export default combineReducers({
-//     AddEmployeeReducer
+//     LoginReducer,
+//     AdminReducer
 // });
-export * from './persons';
+
+
+
+import LoginReducer from './LoginReducer';
+import { combineReducers } from 'redux';
+
+export default combineReducers({
+LoginReducer
+})

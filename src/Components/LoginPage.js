@@ -10,81 +10,117 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from './Footer/Footer';
 import Navbar from './Navbar/Navbar';
 import BrowserHistory from "./Utils/BrowserHistory";
-// import { LoginAction } from '../Action/LoginAction';
+import {loginHandle} from '../Action/LoginAction';
 
 class LoginPage extends React.Component {
+  // constructor(props){
+  //   super(props);
+  //   this.state={
+  //   password:'',
+  //   employeeNo:'',
+  //   passwordError:'',
+  //   employeeNoError:'',
+   
+  //   }
+  //   }
+  //   handleSubmit = () => {
+  //   const { password,employeeNo } = this.state
+  //   const payload = { password,employeeNo }
+    
+  //   let reg_pwd=/^[@#][A-Za-z0-9]{7,13}$/;
+  //   let reg_employeeNo=/^[A-Z0-9]{4}$/;
+  //   let t=0;
+    
+  //   if(!this.state.password) this.setState({passwordError:'Password is required'});
+  //   else if(!reg_pwd.test(this.state.password)) this.setState({passwordError:'Invalid Password'});
+  //   else {
+  //   t++;
+  //   this.setState({passwordError:''});
+  //   }
+  //   if(!this.state.employeeNo) this.setState({employeeNoError:'EmployeeNo is required'});
+  //   else if(!reg_employeeNo.test(this.state.employeeNo)) this.setState({employeeNoError:'Invalid EmployeeNo'});
+  //   else {
+  //   t++;
+  //   this.setState({employeeNoError:''});
+  //   }
+    
+  //   if(t>1) {
+  //   this.props.loginHandle(payload);
+  //   browserHistory.push("/HomePage");
+  //   console.log(payload)
+  //   } 
+  //   }
+    
+  //   handleChange=(e)=>{
+  //   this.setState({[e.target.name]:e.target.value});
+  //   }
+  //   handleSignin=()=>{
+  //     const { employeeNo,password} = this.state;
+  //     const payload = {employeeNo ,password }
+      
+  //   }
+
+  constructor(props) {
+    super(props);
+    this.state = {
+    employeeNo: '',
+    password: '',
+    uerr: '',
+    perr: ''
+    };
   
-//   constructor() {
-//     super();
-//     this.state = {
-//       fields: {},
-//       errors: {}
-//     }
-//     this.handleChange = this.handleChange.bind(this);
-//     this.submituserLoginForm = this.submituserLoginForm.bind(this);
-
-//   };
-//   handleChange(e) {
-//     debugger
-//     let fields = this.state.fields;
-//     fields[e.target.name] = e.target.value;
-//     this.setState({
-//       fields
-//     });
-
-//   }
-//   submituserLoginForm(e) {
-//     debugger  
-//     e.preventDefault();
-//     if (this.validateForm()) {
-//         let fields = {};
-//         fields["EmployeeNo"] = "";
-//         fields["password"] = "";
-//         this.setState({fields:fields});
-//         alert("Form submitted");
-//     }
-
-//   }
-
-//   validateForm() {
-// debugger
-//     let fields = this.state.fields;
-//     let errors = {};
-//     let formIsValid = true;
-
-//     if (!fields["EmployeeNo"]) {
-//       formIsValid = false;
-//       errors["EmployeeNo"] = "*Please enter your EmployeeNo.";
-//     }
-
-//     if (typeof fields["EmployeeNo"] !== "undefined") {
-//       //regular expression for email validation
-//       var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
-//       if (!pattern.test(fields["EmployeeNo"])) {
-//         formIsValid = false;
-//         errors["EmployeeNo"] = "*Please enter valid EmployeeNo.";
-//       }
-//     }
-//     if (!fields["password"]) {
-//       formIsValid = false;
-//       errors["password"] = "*Please enter your password.";
-//     }
-
-//     if (typeof fields["password"] !== "undefined") {
-//       if (!fields["password"].match(/^.*(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%&]).*$/)) {
-//         formIsValid = false;
-//         errors["password"] = "*Please enter secure and strong password.";
-//       }
-//     }
-//     this.setState({
-//       errors: errors
-//     });
-//     return formIsValid;
-//   }
-  
-  onHandleClick(){
-    BrowserHistory.push("/HomePage");
+    
     }
+    onHandleClicksCancel = (e) => {
+    
+    BrowserHistory.push('/LoginForm'); 
+    
+    }
+    
+    
+    onHandleClick = (e) => {
+    e.preventDefault();
+    const payload = {
+      employeeNo: this.state.employeeNo,
+    password: this.state.password
+    }
+    // signup(reqst).then(res => {
+    // if (res.data === "User Created Succesfully") {
+    // alert("UserCreated Successfully")
+    // BrowserHistory.push('/login')
+    // }
+    
+    // })
+    
+    if (this.state.employeeNo.length === 0 && this.state.password.length === 0 ) {
+    this.setState({
+    uerr: "Email is required",
+    perr: "Password is required"
+    
+    })
+    }
+    else if (this.state.employeeNo.length === 0) {
+    this.setState({ uerr: "Username is required" })
+    }
+    else if (this.state.password.length === 0) {
+    this.setState({ perr: "Password is required" })
+    }
+    else if (!this.state.employeeNo.match(/^[a-zA-Z0-9]+@+[a-zA-Z0-9]+.+[A-z]$/)) {
+    this.setState({ uerr: "Please enter the valid email" })
+    }
+    else if (!this.state.password.match(/^[@#][A-Za-z0-9]{9,11}$/)) {
+    this.setState({ perr: "Please enter the valid password" })
+    }
+    // else {
+    //     BrowserHistory.push('/dashboard')
+    //     }
+    this.props.loginHandle(payload);
+        
+    }
+    
+
+  
+  
   render() {
     return (
       <div className="logPage">
@@ -96,16 +132,17 @@ class LoginPage extends React.Component {
         <form>
           <label className="emp"></label>
           <img className="humanimg" src={logo2}></img>
-            <input className="emp1" type="text" name="employeename" placeholder=" EmployeeNo"/><br></br>
-                {/* <div>Username is required</div> */}
-                    
+          <input className="emp1"  type="text" name="employeeNo" onChange={this.onHandleChange}  placeholder="EmployeeNo"/><br></br> 
+          <p className='red'>{this.state.employeeNoError}</p> 
+
           <label className="pwd"></label>
           <img className="lockimg" src={logo1}></img>
-            <input className="pwd1"  type="password" name="password"  placeholder="password" /><br></br>
-                {/* <div>Password is required</div> */}   
-                <button className="login" onClick={this.onHandleClick}>Login</button>
-                <p className="header1">or forgot Password</p>
-                <p className="header2">or sign in with</p>
+          <input className="pwd1"  type="password" name="password" onChange={this.onHandleChange}  placeholder="password" /><br></br>
+          <p className='red'>{this.state.passwordError}</p>
+
+          <button className="login" onClick={this.onHandleClick}>Login</button>
+          <p className="header1">or forgot Password</p>
+          <p className="header2">or sign in with</p>
         </form>
         <div className="icons">       
          <SocialIcon className="icons" url="http://twitter.com/jaketrent" />
@@ -119,5 +156,30 @@ class LoginPage extends React.Component {
     )
     } 
 }
+const mapStateToProps=(state)=>{
+  const {password,EmployeeNo }=state.LoginReducer
+  return {password,EmployeeNo }
+}
+export default connect(mapStateToProps,{loginHandle})  (LoginPage);
 
-export default LoginPage;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
