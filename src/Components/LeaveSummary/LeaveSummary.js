@@ -22,14 +22,6 @@ class LeaveSummary extends Component {
                  </div>
                 </div> 
 
-                
-                {/* <div id="leavebal1">Upcoming Holidays</div><br></br>
-                  <div className="leaveatt1">
-                  <div className="para6">Wednesday  15-01-2020</div>
-                  <div className="para7">Sankranthi</div>
-                 </div>
-                </div> */}
-
                 <div className="container7">
                   <div id="leavebal6">Leave Summary-2020</div><br></br>
                   <div className="leaveatt6">

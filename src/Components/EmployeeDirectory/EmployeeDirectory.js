@@ -119,7 +119,7 @@ class EmployeeDirectory extends Component {
                   </table>
                   </div>
                   
-                <div className="footer3">
+                <div className="footer7">
                     <Footer/>
                 </div>
             </div>

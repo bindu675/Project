@@ -11,119 +11,75 @@ import Footer from './Footer/Footer';
 import Navbar from './Navbar/Navbar';
 import BrowserHistory from "./Utils/BrowserHistory";
 import {loginHandle} from '../Action/LoginAction';
-
+import axios from "axios"
 class LoginPage extends React.Component {
-  // constructor(props){
-  //   super(props);
-  //   this.state={
-  //   password:'',
-  //   employeeNo:'',
-  //   passwordError:'',
-  //   employeeNoError:'',
-   
-  //   }
-  //   }
-  //   handleSubmit = () => {
-  //   const { password,employeeNo } = this.state
-  //   const payload = { password,employeeNo }
-    
-  //   let reg_pwd=/^[@#][A-Za-z0-9]{7,13}$/;
-  //   let reg_employeeNo=/^[A-Z0-9]{4}$/;
-  //   let t=0;
-    
-  //   if(!this.state.password) this.setState({passwordError:'Password is required'});
-  //   else if(!reg_pwd.test(this.state.password)) this.setState({passwordError:'Invalid Password'});
-  //   else {
-  //   t++;
-  //   this.setState({passwordError:''});
-  //   }
-  //   if(!this.state.employeeNo) this.setState({employeeNoError:'EmployeeNo is required'});
-  //   else if(!reg_employeeNo.test(this.state.employeeNo)) this.setState({employeeNoError:'Invalid EmployeeNo'});
-  //   else {
-  //   t++;
-  //   this.setState({employeeNoError:''});
-  //   }
-    
-  //   if(t>1) {
-  //   this.props.loginHandle(payload);
-  //   browserHistory.push("/HomePage");
-  //   console.log(payload)
-  //   } 
-  //   }
-    
-  //   handleChange=(e)=>{
-  //   this.setState({[e.target.name]:e.target.value});
-  //   }
-  //   handleSignin=()=>{
-  //     const { employeeNo,password} = this.state;
-  //     const payload = {employeeNo ,password }
-      
-  //   }
 
   constructor(props) {
     super(props);
     this.state = {
     employeeNo: '',
     password: '',
-    uerr: '',
-    perr: ''
+    employeeNoError: '',
+    passwordError: ''
     };
   
     
     }
+    onHandleChange=(e)=>{
+        this.setState({[e.target.name]:e.target.value});
+        }
     onHandleClicksCancel = (e) => {
-    
-    BrowserHistory.push('/LoginForm'); 
-    
+    // BrowserHistory.push('/HomePage'); 
     }
     
     
     onHandleClick = (e) => {
     e.preventDefault();
     const payload = {
-      employeeNo: this.state.employeeNo,
+    EmployeeNo: this.state.employeeNo,
     password: this.state.password
     }
-    // signup(reqst).then(res => {
-    // if (res.data === "User Created Succesfully") {
-    // alert("UserCreated Successfully")
-    // BrowserHistory.push('/login')
-    // }
-    
-    // })
+    console.log(payload)
     
     if (this.state.employeeNo.length === 0 && this.state.password.length === 0 ) {
     this.setState({
-    uerr: "Email is required",
-    perr: "Password is required"
+    employeeNoError: "employeeNo is required",
+    passwordError: "Password is required"
     
     })
     }
     else if (this.state.employeeNo.length === 0) {
-    this.setState({ uerr: "Username is required" })
+    this.setState({ employeeNoError: "employeeno is required" })
     }
     else if (this.state.password.length === 0) {
-    this.setState({ perr: "Password is required" })
+    this.setState({ passwordError: "Password is required" })
     }
     else if (!this.state.employeeNo.match(/^[a-zA-Z0-9]+@+[a-zA-Z0-9]+.+[A-z]$/)) {
-    this.setState({ uerr: "Please enter the valid email" })
+    this.setState({employeeNoError: "Please enter the valid employeeno." })
     }
     else if (!this.state.password.match(/^[@#][A-Za-z0-9]{9,11}$/)) {
-    this.setState({ perr: "Please enter the valid password" })
+    this.setState({ passwordError: "Please enter the valid password" })
     }
-    // else {
-    //     BrowserHistory.push('/dashboard')
-    //     }
-    this.props.loginHandle(payload);
-        
-    }
+   
+    const options = {
+      url: 'http://localhost:9001/user_login',
+      method: 'POST',
+      
+      data: payload
+      };
+      axios(options)
+      .then(response => {
+      console.log(response.status);
+      sessionStorage.setItem('authentication', response.data.token)
+		  sessionStorage.setItem('userEmail', response.data.email)
+      BrowserHistory.push('/HomePage')
+    });
+  }
     
-
-  
-  
   render() {
     return (
       <div className="logPage">
+        <div className="offcimg1">
         <div>
           <Navbar/>
         </div>
@@ -153,6 +109,7 @@ class LoginPage extends React.Component {
         <Footer/>
       </div>
       </div>
+      </div>
     )
     } 
 }
@@ -160,7 +117,7 @@ const mapStateToProps=(state)=>{
   const {password,EmployeeNo }=state.LoginReducer
   return {password,EmployeeNo }
 }
-export default connect(mapStateToProps,{loginHandle})  (LoginPage);
+export default connect(mapStateToProps,{loginHandle}) (LoginPage);
 
 
 

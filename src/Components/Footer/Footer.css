@@ -1,7 +1,10 @@
 .footer{
     width: 100%;
     height: 50px;
-    /* margin-top: 30px; */
+    margin-top: 5px;
+    color: white;
+    background-color:#08476e;
+    /* position: fixed; */
 }
 .header3{
     margin-right: 900px;
@@ -15,14 +18,14 @@
     margin-top: -55px;
 }
 .para{
-    margin-left: 822px;
+    margin-left: 796px;
     margin-top: -47px;
-    font-size: 11px; 
+    font-size: 13px; 
 }
 .para1{
     margin-left: 909px;
     margin-top: -34px;
-    font-size: 15px; 
+    font-size: 17px; 
     color: brown;
 }
 #footer2{
@@ -33,15 +36,15 @@
     color: white; 
     position: fixed;
 }
-.footer3{
+.footer7{
     width: 100%;
-    height: 50px;
-    margin-top: 407px;
+    height: 40px;
+    margin-top: 150px;
     position: fixed;
 }
 .footer4{
     width: 100%;
     height: 50px;
-    margin-top: 500px;
+    margin-top: 370px;
     position: fixed;
 }

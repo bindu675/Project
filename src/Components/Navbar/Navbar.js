@@ -8,8 +8,8 @@ class Navbar extends Component {
       <div>
         <div className="navbar">
           <img className="logo2" src={logo}></img>
-            <a  className="nav1" href='/Bindu'>Bindu</a>
-            <a className="nav2" href='/Signout'>Signout</a>
+            <a  className="nav1" href='#User'>User</a>
+            <a className="nav2" href='/LoginPage'>Signout</a>
         </div>
       </div>
     );

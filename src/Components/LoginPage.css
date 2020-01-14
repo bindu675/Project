@@ -1,14 +1,18 @@
 .logPage{
     background-color: white;
+    background:url('./Navbar/offcimg.jpg');
+}
+.offcimg1{
+    background: rgba(235, 176, 176, 0.199);
 }
 .emp1{
     width: 200px;
 } 
  .login1{
-     font-size: 22px;
-     margin-top: 29px;
-     margin-left:79px;
-     color: brown;
+    font-size: 32px;
+    margin-top: 29px;
+    margin-left: 79px;
+    color: #f70606;
  }
 
  .lockimg{
@@ -16,12 +20,14 @@
      width: 30px;
      margin-top: 5px;
      margin-left: 74px;
+     color: rgb(0, 0, 0);
  }
  .humanimg{
     height: 30px;
     width: 30px;
     margin-top: 5px;
     margin-left: 90px;
+    color: black;
  }
 .pwd{
     margin-left: 26px;
@@ -49,11 +55,13 @@
 }
 .header1{
     margin-left: 250px;
-    font-size:13px
+    font-size:13px;
+    color: white;
 }
 .header2{
     margin-right: 45px;
-    font-size:13px
+    font-size:13px;
+    color:white;
 }
 .emp1{
     border: none;
@@ -71,7 +79,7 @@
     margin-top: 20px;
     width: 250px;
 }
-.Red{
+.red{
     color: red;
 }
 

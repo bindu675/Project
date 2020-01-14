@@ -7,6 +7,18 @@ import logo7 from '../Navbar/homeimg1.jpeg'
 // import { Button, Nav } from 'react-bootstrap';
 
 class HomePage extends Component {
+   state={
+    feedtext:'',
+   }
+   onHandleChange=(e)=>{
+    this.setState({[e.target.name]:e.target.value});
+    }
+    onHandleClick = (e) => {
+        const payload = {
+          feedtext: this.state.feedtext
+        };
+      }
+
     render() {
         return (
          <div>
@@ -16,8 +28,8 @@ class HomePage extends Component {
 
           <div className="container3">
             <label className="feed">Feeds</label><br></br>
-            <input className="holder" type="text" placeholder="  "></input><br></br>
-            <button className="button">Update</button>
+            <input className="holder" type="text" name="feedtext" placeholder="" onChange={this.onHandleChange}></input><br></br>
+            <button className="button" onClick={this.onHandleClick}>Update</button>
           </div>
          
           <input className="user" type="text" placeholder=" "></input>
@@ -30,7 +42,7 @@ class HomePage extends Component {
          
           <div class='eventcontainer'>
             <div class="row"> 
-            <div class="col" id="event1">
+            <div class="col" id="events3">
               To Events
             </div>
             <div class="col" id="day1" >
