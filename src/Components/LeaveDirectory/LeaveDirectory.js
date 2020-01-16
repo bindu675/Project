@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './LeaveDirectory.css';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
-import BrowserHistory from "../Utils/BrowserHistory";
+// import BrowserHistory from "../Utils/BrowserHistory";
 import axios from "axios"
 
 class LeaveDirectory extends Component {

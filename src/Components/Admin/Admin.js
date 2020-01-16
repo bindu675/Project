@@ -2,10 +2,35 @@ import React, { Component } from 'react';
 import './Admin.css'
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
-import logo5 from '../Navbar/humanimg.png'
-import logo7 from '../Navbar/homeimg1.jpeg'
+import logo5 from '../Navbar/humanimg.png';
+import logo7 from '../Navbar/homeimg1.jpeg';
+import axios from "axios"
 
 class Admin extends Component {
+  state={
+    feedtext:'',
+   }
+   onHandleChange=(e)=>{
+    this.setState({[e.target.name]:e.target.value});
+    }
+    onHandleClick = (e) => {
+        const payload = {
+          feedtext: this.state.feedtext
+        };
+      
+      const options = {
+        url: 'http://localhost:9001/Feed',
+        method: 'POST',
+        data: payload
+      };
+      axios(options)
+        .then(response => {
+          console.log(response.status);
+          // sessionStorage.setItem('authentication', response.data.token)
+          // sessionStorage.setItem('userEmail', response.data.email)
+          // BrowserHistory.push('/Admin')
+        });
+      }
     render() {
         return (
             <div>
@@ -15,8 +40,8 @@ class Admin extends Component {
 
           <div className="container2">
             <label className="feed">Feeds</label><br></br>
-            <input className="holder" type="text" placeholder="  "></input><br></br>
-            <button className="button">Update</button>
+            <input className="holder" type="text" name="feedtext" placeholder=" " onChange={this.onHandleChange}></input><br></br>
+            <button className="button" onClick={this.onHandleClick}>Update</button>
           </div>
          
           <input className="user" type="text" placeholder=" "></input>

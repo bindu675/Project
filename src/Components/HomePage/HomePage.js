@@ -4,6 +4,7 @@ import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import logo5 from '../Navbar/humanimg.png'
 import logo7 from '../Navbar/homeimg1.jpeg'
+import axios from "axios"
 // import { Button, Nav } from 'react-bootstrap';
 
 class HomePage extends Component {
@@ -17,8 +18,20 @@ class HomePage extends Component {
         const payload = {
           feedtext: this.state.feedtext
         };
+      
+      const options = {
+        url: 'http://localhost:9001/Feed',
+        method: 'POST',
+        data: payload
+      };
+      axios(options)
+        .then(response => {
+          console.log(response.status);
+          // sessionStorage.setItem('authentication', response.data.token)
+          // sessionStorage.setItem('userEmail', response.data.email)
+          // BrowserHistory.push('/Admin')
+        });
       }
-
     render() {
         return (
          <div>

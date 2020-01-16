@@ -118,25 +118,3 @@ const mapStateToProps=(state)=>{
   return {password,EmployeeNo }
 }
 export default connect(mapStateToProps,{loginHandle}) (LoginPage);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
