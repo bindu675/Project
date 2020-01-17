@@ -3,13 +3,14 @@ import Footer from '../Footer/Footer'
 import Navbar from '../Navbar/Navbar';
 import BrowserHistory from "../Utils/BrowserHistory";
 import {questionHandle} from '../../Action/DesktopAction';
+import './EmployeeTable.css';
 import {connect} from 'react-redux'
 
-class MiscellaneousTable extends Component {
+class EmployeeTable extends Component {
   constructor(props) {
     super(props);
     this.state = {
-    SINO: '',
+    SIno:'',
     EmpId:'',
     FirstName:'',
     LastName:'',
@@ -25,9 +26,9 @@ class MiscellaneousTable extends Component {
     this.setState({[e.target.name]:e.target.value});
     }
     
-    onChangeSINO=(e)=> {
+    onChangeSIno=(e)=> {
     this.setState({
-    SINO: e.target.value
+    SIno: e.target.value
     }) 
     }
     
@@ -76,7 +77,7 @@ class MiscellaneousTable extends Component {
     debugger
     e.preventDefault();
     const payload = {
-    SINO: this.state.SINO,
+    SIno: this.state.SIno,
     EmpId: this.state.EmpId,
     FirstName: this.state.FirstName,
     LastName: this.state.LastName,
@@ -88,7 +89,7 @@ class MiscellaneousTable extends Component {
     };
     
     this.props.questionHandle(payload);
-    BrowserHistory.push('./Desktopform'); 
+    BrowserHistory.push('./EmployeeList'); 
     }
      render() {
        return (
@@ -98,97 +99,97 @@ class MiscellaneousTable extends Component {
           <Navbar/>
         </div>
 
-      <div className="desktopimg" style={{ marginTop: 10 }}>
-      <form onSubmit={this.onSubmit} className="deskform">
+      <div>
+      <form onSubmit={this.onSubmit} className="empsubmit2">
 
       <div>
-      <label className="name">SINO: </label>
-      <input type="text" 
-      className="width"
-      value={this.state.SINO}
-      onChange={this.onChangeSINO}
+      <label className="empnum1">SIno </label>
+      <input type="number" 
+      className="empnum2"
+      value={this.state.SIno}
+      onChange={this.onChangeSIno}
       />
       </div>
 
       <div>
-      <label className="name"> EmpId:</label>
+      <label className="empnum3"> EmpId</label>
       <input type="text" 
-      className="width"
+      className="empnum4"
       value={this.state.EmpId}
       onChange={this.onChangeEmpId}
       />
       </div>
 
       <div>
-      <label className="name"> FirstName:</label>
+      <label className="empnum5"> FirstName</label>
       <input type="text" 
-      className="width"
+      className="empnum6"
       value={this.state.FirstName}
       onChange={this.onChangeFirstName}
       />
       </div>
 
       <div>
-      <label className="name"> LastName:</label>
+      <label className="empnum7"> LastName</label>
       <input type="text" 
-      className="width"
+      className="empnum8"
       value={this.state.LastName}
       onChange={this.onChangeLastName}
       />
       </div>
 
       <div>
-      <label className="name"> Date_of_Birth:</label>
+      <label className="empnum9"> Date_of_Birth</label>
       <input type="text" 
-      className="width"
+      className="empnum17"
       value={this.state.Date_of_Birth}
       onChange={this.onChangeDate_of_Birth}
       />
       </div>
 
       <div>
-      <label className="name"> Sex:</label>
+      <label className="empnum10"> Sex</label>
       <input type="text" 
-      className="width"
+      className="empnum11"
       value={this.state.Sex}
       onChange={this.onChangeSex}
       />
       </div>
 
       <div>
-      <label className="name"> JoiningDate:</label>
+      <label className="empnum12"> JoiningDate</label>
       <input type="text" 
-      className="width"
+      className="empnum13"
       value={this.state.JoiningDate}
       onChange={this.onChangeJoiningDate}
       />
       </div>
 
     <div>
-    <label className="name"> email_id:</label>
+    <label className="empnum14"> email_id</label>
     <input type="text" 
-    className="width"
+    className="empnum15"
     value={this.state.email_id}
     onChange={this.onChangeemail_id}
     />
     </div>
 
     <div>
-    <label className="name"> MobileNo:</label>
+    <label className="empnum20"> MobileNo</label>
     <input type="text" 
-    className="width"
+    className="empnum16"
     value={this.state.MobileNo}
     onChange={this.onChangeMobileNo}
     />
     </div>
 
     <div className="form-group">
-    <button type="submit" value="send" className="sendbta" onClick={this.onSubmit}>Send</button>
-    <button type="submit" className="resetbta">Reset</button> 
+    <button type="submit" value="send" id="sendbttn" onClick={this.onSubmit}>Send</button>
+    <button type="submit" className="resetbttn">Reset</button> 
     </div>
     </form>
     </div>
-    <div>
+    <div className="footer10">
       <Footer/>
     </div>
     </div>
@@ -196,19 +197,19 @@ class MiscellaneousTable extends Component {
     }
     }
     const mapStateToProps=(state)=>{
-      const {SINO}=state.DesktopReducer
-      const {EmpId}=state.DesktopReducer
-      const {FirstName}=state.DesktopReducer
-      const {LastName}=state.DesktopReducer
-      const {Date_of_Birth}=state.DesktopReducer
-      const {Sex}=state.DesktopReducer
-      const {JoiningDate}=state.DesktopReducer
-      const {email_id}=state.DesktopReducer
-      const {MobileNo}=state.DesktopReducer
+      const {SIno}=state.EmployeeReducer
+      const {EmpId}=state.EmployeeReducer
+      const {FirstName}=state.EmployeeReducer
+      const {LastName}=state.EmployeeReducer
+      const {Date_of_Birth}=state.EmployeeReducer
+      const {Sex}=state.EmployeeReducer
+      const {JoiningDate}=state.EmployeeReducer
+      const {email_id}=state.EmployeeReducer
+      const {MobileNo}=state.EmployeeReducer
       
-  return {SINO,EmpId,FirstName,LastName,Date_of_Birth,Sex,JoiningDate,email_id,MobileNo}
+  return {SIno,EmpId,FirstName,LastName,Date_of_Birth,Sex,JoiningDate,email_id,MobileNo}
   }
-  export default connect(mapStateToProps,{questionHandle}) (MiscellaneousTable);
+  export default connect(mapStateToProps,{questionHandle}) (EmployeeTable);
 
 
 

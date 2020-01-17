@@ -49,7 +49,7 @@ class Admin extends Component {
           <div class="vertical-menu">
           <a className="feed1" href="#">Feeds</a>
           <a className="feed1" href="LeaveDirectory">Employee_Leave_Details</a>
-          <a className="feed1" href="EmployeeDirectory">EmployeeDirectory</a>
+          <a className="feed1" href="EmployeeTable">EmployeeDirectory</a>
           </div>
           
 

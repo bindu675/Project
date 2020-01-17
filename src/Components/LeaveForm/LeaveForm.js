@@ -33,6 +33,7 @@ class LeaveForm extends Component {
         empid: this.state.empid,
         Reason:this.state.reason,
         No_of_days:this.state.days,
+        cc:this.state.cc,
         type:this.state.type
       }
       console.log(payload)

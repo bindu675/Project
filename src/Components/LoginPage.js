@@ -11,6 +11,7 @@ import Footer from './Footer/Footer';
 import Navbar from './Navbar/Navbar';
 import BrowserHistory from "./Utils/BrowserHistory";
 import {loginHandle} from '../Action/LoginAction';
+import Cookies from "js-cookie"
 import axios from "axios"
 class LoginPage extends React.Component {
 
@@ -71,7 +72,9 @@ class LoginPage extends React.Component {
       .then(response => {
       console.log(response.status);
       sessionStorage.setItem('authentication', response.data.token)
-		  sessionStorage.setItem('userEmail', response.data.email)
+      sessionStorage.setItem('Firstname', response.data.Firstname)
+      Cookies.set('Firstname', response.data.Firstname);
+      console.log(Cookies.get("Firstname"))
       BrowserHistory.push('/HomePage')
     });
   }
@@ -114,7 +117,7 @@ class LoginPage extends React.Component {
     } 
 }
 const mapStateToProps=(state)=>{
-  const {password,EmployeeNo }=state.LoginReducer
-  return {password,EmployeeNo }
+  const {password,employeeNo }=state.LoginReducer
+  return {password,employeeNo }
 }
 export default connect(mapStateToProps,{loginHandle}) (LoginPage);

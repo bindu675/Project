@@ -13,13 +13,13 @@ class TableRow extends Component {
     .catch(err => console.log(err))
     window.location.reload();
     }
-    edit() {
-    debugger;
-    axios.edit(`http://localhost:9001/edit3/${this.props.obj._id}`)
-    .then(console.log('edit'))
-    .catch(err => console.log(err))
-    window.location.reload();
-    }
+    // edit() {
+    // debugger;
+    // axios.edit(`http://localhost:9001/edit/${this.props.obj._id}`)
+    // .then(console.log('edit'))
+    // .catch(err => console.log(err))
+    // window.location.reload();
+    // }
     
   render() {
     return (
@@ -27,7 +27,7 @@ class TableRow extends Component {
        <tr>
 
         <td>
-          {this.props.obj.SINO}
+          {this.props.obj.SIno}
         </td>
 
         <td>
@@ -62,19 +62,16 @@ class TableRow extends Component {
           {this.props.obj.MobileNo}
         </td>
 
-        <td>
+        {/* <td>
           <button onClick={this.edit} className="btn btn-primary">Edit</button>
-        </td>
+        </td> */}
 
         <td>
           <button onClick={this.delete} className="btn btn-danger">Delete</button>
         </td>
 
       </tr>
-    );
-    }
-   }
-      </div>
+     </div>
     );
   }
 }

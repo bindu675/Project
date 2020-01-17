@@ -10,8 +10,8 @@ import Admin from './Components/Admin/Admin';
 import LeaveDirectory from './Components/LeaveDirectory/LeaveDirectory';
 import AdminLogin from './Components/Admin/AdminLogin';
 import LoginPage from './Components/LoginPage';
-import DesktopForm from './Components/mescellenious/DesktopForm';
-import MiscellaneousTable from './Components/mescellenious/MiscellaneousTable';
+import EmployeeTable from './Components/employeedetails/EmployeeTable';
+import EmployeeList from './Components/employeedetails/EmployeeList';
 
 const PrivateRoute = ({ component: IncomingComponent, ...rest }) => (
   <Route
@@ -37,8 +37,8 @@ function App() {
             <Route exact path='/AdminLogin' component={AdminLogin}></Route>
             <Route exact path='/LeaveDirectory' component={LeaveDirectory}></Route> 
             <Route exact path='/LoginPage' component={LoginPage}></Route>
-            <Route exact path='/DesktopForm' component={DesktopForm}></Route>
-            <Route exact path='/MiscellaneousTable' component={MiscellaneousTable}></Route>
+            <Route exact path='/EmployeeList' component={EmployeeList}></Route>
+            <Route exact path='/EmployeeTable' component={EmployeeTable}></Route>
                 
         </switch>
       </Router>
