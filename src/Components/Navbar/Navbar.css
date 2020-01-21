@@ -8,7 +8,7 @@
 .nav1{
     color: white;
     margin: 30px;
-    margin-top: 1px;
+    margin-top: -31px;
     margin-left: 950px; 
 }
 .nav2{
@@ -21,7 +21,11 @@
     height: 48px;
     width: 70px;
     border-radius: 100%;
-    margin-top: -26px;
+    margin-top: -7px;
+}
+#logbtn{
+    margin-top: -83px;
+    background-color: gray;
 }
 
  

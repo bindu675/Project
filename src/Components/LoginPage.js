@@ -55,11 +55,11 @@ class LoginPage extends React.Component {
     else if (this.state.password.length === 0) {
     this.setState({ passwordError: "Password is required" })
     }
-    else if (!this.state.employeeNo.match(/^[a-zA-Z0-9]+@+[a-zA-Z0-9]+.+[A-z]$/)) {
+    else if (!this.state.employeeNo.match(/^[A-Z0-9]{4,5}$/)) {
     this.setState({employeeNoError: "Please enter the valid employeeno." })
     }
     else if (!this.state.password.match(/^[@#][A-Za-z0-9]{9,11}$/)) {
-    this.setState({ passwordError: "Please enter the valid password" })
+    this.setState({ passwordError: "" })
     }
    
     const options = {
@@ -100,7 +100,7 @@ class LoginPage extends React.Component {
           <p className='red'>{this.state.passwordError}</p>
 
           <button className="login" onClick={this.onHandleClick}>Login</button>
-          <p className="header1">or forgot Password</p>
+          {/* <p className="header1">or forgot Password</p> */}
           <p className="header2">or sign in with</p>
         </form>
         <div className="icons">       

@@ -1,4 +1,4 @@
-#leavebal{
+/* #leavebal{
   background-color: lightblue;
   width: 372px;
 }
@@ -73,4 +73,50 @@
 .apprbtn{
   margin-left: 10px;
 }
+   */
+
+   table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    
+  }
+  .clsitems1{
+    width: 500px;
+    margin-left: 500px;
+    margin-top: 15px;
+  }
   
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  /* .empdir{
+    background-color: white;
+  } */
+ .tab16{
+  width: 118px;
+ }
+ .tab11{
+  width: 219px;
+ }
+ .tab12{
+  width: 430px;
+ }
+ .tab13{
+  width: 211px;
+ }
+ .tab14{
+  width: 118px;
+ }
+ .tab15{
+  width: 211px;
+ }
+ .tableitems12{
+   margin-left: 500px;
+   width: 500px;
+ }

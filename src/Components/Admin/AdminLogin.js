@@ -51,9 +51,9 @@ class AdminLogin extends React.Component {
       this.setState({ employeeNoError: "employeeno is required" })
     }
     else if (this.state.password.length === 0) {
-      this.setState({passwordError: "Password is required" })
+      this.setState({ passwordError: "Password is required" })
     }
-    else if (!this.state.employeeNo.match(/^[a-zA-Z0-9]+@+[a-zA-Z0-9]+.+[A-z]$/)) {
+    else if (!this.state.employeeNo.match(/^[A-Z0-9]{4,5}$/)) {
       this.setState({ employeeNoError: "Please enter the valid employeeNo" })
     }
     else if (!this.state.password.match(/^[@#][A-Za-z0-9]{9,11}$/)) {
@@ -111,7 +111,7 @@ class AdminLogin extends React.Component {
   }
 }
 const mapStateToProps = (state) => {
-  const { password,employeeNo } = state.LoginReducer
+  const { password, employeeNo } = state.LoginReducer
   return { password, employeeNo }
 }
 export default connect(mapStateToProps, { loginHandle })(AdminLogin);

@@ -26,6 +26,13 @@ class LeaveForm extends Component {
     this.setState({[e.target.name]:e.target.value});
     }
 
+  balance=(e)=>{
+    this.setState({to_Date:e.target.value});
+
+    this.setState({balance:this.state.to_Date-this.state.from_Date});
+    console.log(this.state.balance)
+      }
+
     onHandleClick = (e) => {
     //   e.preventDefault();
       const payload = {
@@ -74,16 +81,16 @@ class LeaveForm extends Component {
        <div className="grid-container">
     
        <label>From Data</label>
-       <input type="text" name="from_Date" placeholder=" " onChange={this.onHandleChange} ></input>
+       <input type="date" name="from_Date" placeholder=" " onChange={this.onHandleChange} ></input>
       
        <label>To Date </label>
-       <input type="text" name="to_Date" placeholder=" " onChange={this.onHandleChange}></input><br></br>
+       <input type="date" name="to_Date" placeholder=" " onChange={this.balance}></input><br></br>
 
        <label>Days</label>
        <input type="number" name="days" placeholder=" " onChange={this.onHandleChange}></input>
 
        <label>Balance</label>
-       <input type="number" name="balance" placeholder=" " onChange={this.onHandleChange}></input>
+       <input type="number" name="balance" placeholder=" " defaultvalue={this.state.balance}></input>
        </div><br></br>
 
        <div>
@@ -97,7 +104,7 @@ class LeaveForm extends Component {
        <label>CC To</label>
        <input className="holder5" type="text" name="cc" placeholder="" onChange={this.onHandleChange}></input><br></br>
 
-       <p id="note">Note : Seperate multiple emails with commas </p>
+       {/* <p id="note">Note : Seperate multiple emails with commas </p> */}
        <button className="apply" onClick={this.onHandleClick}>Apply</button><br></br>
        <button id="cancelbtn">Cancel</button>
      </form>
