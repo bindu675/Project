@@ -2,15 +2,18 @@
     background-color: white;
     
 }
-.offcimg1{
-    background: rgba(235, 176, 176, 0.199);
+.paraleave1{
+    margin-left: 89px;
+    margin-top: 10px;
+    color: rebeccapurple;
+    font-size: 20px;
 }
 .emp1{
     width: 200px;
 } 
  .login1{
     font-size: 32px;
-    margin-top: 29px;
+    margin-top: 14px;
     margin-left: 79px;
     color: #f70606;
  }
@@ -43,7 +46,7 @@
     height: 100px;
     width: 100px; 
     border-radius: 100%; 
-    margin-top: 53px;
+    margin-top: 1px;
     margin-left: 82px;
 }
 .login{

@@ -11,6 +11,7 @@ import AdminLogin from './Components/Admin/AdminLogin';
 import LoginPage from './Components/LoginPage';
 import EmployeeTable from './Components/employeedetails/EmployeeTable';
 import EmployeeList from './Components/employeedetails/EmployeeList';
+import Calender from './Components/Calender/Calender';
 
 const PrivateRoute = ({ component: IncomingComponent, ...rest }) => (
   <Route
@@ -27,7 +28,7 @@ function App() {
     <div className="App">
       <Router>
         <switch>
-          <Route exact path='/' component={LoginPage}></Route>
+          <Route exact path='/' component={LeaveForm}></Route>
           <PrivateRoute exact path='/HomePage' component={HomePage}></PrivateRoute>
           <PrivateRoute exact path='/LeaveForm' component={LeaveForm}></PrivateRoute>
           <Route exact path='/LeaveSummary' component={LeaveSummary}></Route>
@@ -37,6 +38,7 @@ function App() {
           <Route exact path='/LoginPage' component={LoginPage}></Route>
           <Route exact path='/EmployeeList' component={EmployeeList}></Route>
           <Route exact path='/EmployeeTable' component={EmployeeTable}></Route>
+          {/* <Route exact path='/Calender' component={Calender}></Route> */}
 
         </switch>
       </Router>

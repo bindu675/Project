@@ -82,10 +82,10 @@ class LoginPage extends React.Component {
   render() {
     return (
       <div className="logPage">
-        <div className="offcimg1">
         <div>
           <Navbar/>
         </div>
+        <p className="paraleave1">Leave Management System</p>
         <img className="logo1" src={logo}></img>
         <h3 className="login1">Login</h3>
         <form>
@@ -111,7 +111,7 @@ class LoginPage extends React.Component {
       <div className="footer6">
         <Footer/>
       </div>
-      </div>
+     
       </div>
     )
     } 

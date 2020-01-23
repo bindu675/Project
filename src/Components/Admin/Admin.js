@@ -44,6 +44,7 @@ class Admin extends Component {
         // sessionStorage.setItem('authentication', response.data.token)
         // sessionStorage.setItem('userEmail', response.data.email)
         // BrowserHistory.push('/Admin')
+        window.location.reload()
       });
   }
   render() {

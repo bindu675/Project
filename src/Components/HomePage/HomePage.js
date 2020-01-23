@@ -21,6 +21,7 @@ class HomePage extends Component {
     axios.get('http://localhost:9001/Feed')
       .then(response => {
         this.setState({ usersview: response.data });
+       
       })
       
       .catch(function (error) {
@@ -33,6 +34,7 @@ class HomePage extends Component {
   onHandleClick = (e) => {
     const payload = {
       feedtext: this.state.feedtext
+      
     };
     const options = {
       url: 'http://localhost:9001/Feed',
@@ -45,6 +47,7 @@ class HomePage extends Component {
         // sessionStorage.setItem('authentication', response.data.token)
         // sessionStorage.setItem('userEmail', response.data.email)
         // BrowserHistory.push('/Admin')
+        window.location.reload()
       });
   }
 
