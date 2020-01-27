@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-
-
 class TableRow extends Component {
   constructor(props) {
     super(props);
@@ -13,19 +11,11 @@ class TableRow extends Component {
 
   }
   delete = (id) => {
-    debugger;
     axios.delete(`http://localhost:9001/Desktop/${this.props.obj._id}`)
       .then(console.log('Deleted'))
       .catch(err => console.log(err))
     window.location.reload();
   }
-  // edit() {
-  // debugger;
-  // axios.edit(`http://localhost:9001/edit/${this.props.obj._id}`)
-  // .then(console.log('edit'))
-  // .catch(err => console.log(err))
-  // window.location.reload();
-  // }
 
   render() {
     return (
@@ -65,10 +55,6 @@ class TableRow extends Component {
         <td className="tab10">
           {this.props.obj.MobileNo}
         </td>
-
-        {/* <td>
-          <button onClick={this.edit} className="btn btn-primary">Edit</button>
-        </td> */}
 
         <td className="tab11">
           <button className="btn btn-danger" onClick={this.delete.bind(this.id)}>Delete</button>

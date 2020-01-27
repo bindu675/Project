@@ -13,75 +13,81 @@ class LeaveForm extends Component {
     super(props);
     this.state = {
       type: '',
-      from_Date: new Date(),
-      to_Date: new Date(),
-      Difference_In_Days: "",
-      // startDate: new Date(),
-      // endDate: new Date(),
-      // Difference_In_Days:"",
-      balance: '',
+      from_Date:'',
+      to_Date: '',
+      Difference_In_Days: 0,
+      balance: 6,
       reason: '',
       contact_Details: '',
       Email: '',
+
     };
 
   }
 
-
   onHandleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   }
+
   handleChange = date => {
     this.setState({
       from_Date: date
     });
+    console.log(this.state.from_Date)
   };
   handleChangeto = date => {
     this.setState({
       to_Date: date
     });
-    var Difference_In_Time = this.state.to_Date.getTime() - this.state.from_Date.getTime();
-    console.log(this.state.from_Date.getTime())
-    this.setState({
-      Difference_In_Days: Difference_In_Time / (1000 * 3600 * 24)
-    });
+    this.calculateDays(date);
   };
 
-  // balance = (e) => {
-  //   debugger
-  //   this.setState({ to_Date: e.target.value });
-
-  //   this.setState({ balance: this.state.to_Date - this.state.from_Date });
-  //   console.log(this.state.balance)
-  // }
-
   onHandleClick = (e) => {
-    //e.preventDefault();
     debugger
     const payload = {
       employeeName: this.state.employeeName,
       empid: this.state.empid,
       Reason: this.state.reason,
-      No_of_days: this.state.days,
+      No_of_days: this.state.Difference_In_Days,
       Email: this.state.Email,
-      type: this.state.type
-
+      type: this.state.type,
+      balance: this.state.balance
 
     }
+    // if(!this.No_of_days>6)
+    // {
+    //   alert('no leave balance')
+    // }
     console.log(payload)
 
     const options = {
       url: 'http://localhost:9001/Leave',
-      method: 'POST',
+      method: 'PUT',
       data: payload
     };
     axios(options)
       .then(response => {
         console.log(response.status);
-        // sessionStorage.setItem('authentication', response.data.token)
-        // sessionStorage.setItem('userEmail', response.data.email)
         BrowserHistory.push('/HomePage')
       });
+  }
+  calculateDays = (date) => {
+    var Difference_In_Time = date.getTime() - this.state.from_Date.getTime();
+    var temp=Math.round(Difference_In_Time / (1000 * 3600 * 24))
+    this.setState({ Difference_In_Days: temp })
+    // if(Difference_In_Days)
+    this.balanceCalculate(temp);
+
+  }
+  balanceCalculate=(temp)=>{
+    if(temp<=6)
+        this.setState({balance:this.state.balance-temp})
+        else{
+          this.setState({balance:"you have no leaves"})
+          alert("you have no leaves")
+        }
+        
+
   }
 
   render() {
@@ -99,32 +105,26 @@ class LeaveForm extends Component {
           <span>Leave_Type</span>
           <span><select className="leaves" name="type" onChange={this.onHandleChange}>
             <option></option>
-            {/* <option value="Earned Leave">Earned Leave</option>
-       <option value="Componsentory Off">Componsentory Off</option> */}
             <option value="Sick Leave">Sick Leave</option>
           </select></span><br></br><br></br>
           <div className="grid-container">
 
-            <label>From Data</label>
-            {/* <input type="DatePicker" name="from_Date" placeholder=" " onChange={this.onHandleChange} ></input> */}
-            <DatePicker
+            <label>From Date</label>
+            <DatePicker className="fromdate"
               selected={this.state.from_Date}
               onChange={this.handleChange}
             />
 
             <label>To Date </label>
-            {/* <input type="DatePicker" name="to_Date" placeholder=" " onChange={this.balance}></input><br></br> */}
-            <DatePicker
+            <DatePicker className="todate"
               selected={this.state.to_Date}
               onChange={this.handleChangeto}
             />
-
             <label>Days</label>
-            <input type="number" name="days" placeholder=" " onChange={this.onHandleChange}></input>
-            <p>{this.state.Difference_In_Days}</p>
+            <input type="number" name="days" placeholder=" " value={this.state.Difference_In_Days} onChange={this.onHandleChange}></input>
 
             <label>Balance</label>
-            <input type="number" name="balance" placeholder=" " defaultvalue={this.state.balance}></input>
+            <input type="number" value={this.state.balance} name="balance" placeholder=" " onChange={this.onHandleChange}></input>
           </div><br></br>
 
           <div>
@@ -142,7 +142,7 @@ class LeaveForm extends Component {
           <button className="apply" onClick={this.onHandleClick}>Apply</button><br></br>
           <button id="cancelbtn">Cancel</button>
         </form>
-        <div>
+        <div className="footerform">
           <Footer />
         </div>
 

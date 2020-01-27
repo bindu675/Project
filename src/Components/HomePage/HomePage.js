@@ -4,8 +4,7 @@ import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import logo5 from '../Navbar/humanimg.png'
 import logo7 from '../Navbar/homeimg1.jpeg'
-import axios from "axios"
-// import { Button, Nav } from 'react-bootstrap';
+import axios from "axios"                                                       
 
 class HomePage extends Component {
   constructor(props) {
@@ -21,9 +20,9 @@ class HomePage extends Component {
     axios.get('http://localhost:9001/Feed')
       .then(response => {
         this.setState({ usersview: response.data });
-       
+
       })
-      
+
       .catch(function (error) {
         console.log(error);
       })
@@ -34,7 +33,7 @@ class HomePage extends Component {
   onHandleClick = (e) => {
     const payload = {
       feedtext: this.state.feedtext
-      
+
     };
     const options = {
       url: 'http://localhost:9001/Feed',
@@ -44,9 +43,6 @@ class HomePage extends Component {
     axios(options)
       .then(response => {
         console.log(response.status);
-        // sessionStorage.setItem('authentication', response.data.token)
-        // sessionStorage.setItem('userEmail', response.data.email)
-        // BrowserHistory.push('/Admin')
         window.location.reload()
       });
   }
@@ -66,12 +62,11 @@ class HomePage extends Component {
 
             {this.state.usersview.map(name => {
               return (
-                <table style={{color:"black"}}>
+                <table style={{ color: "black" }}>
                   <tr>
                     <td>{name.feedtext}</td>
                   </tr>
                 </table>
-
               )
             }
             )}
@@ -96,12 +91,10 @@ class HomePage extends Component {
               a day go
             </div>
           </div>
-          {/* <div class="event1">To Events</div>
-            <div class="day1">a day go</div> */}
           <div className="paragraph">Happy birthdy Arun Kumar M R,Have a great year ahead</div>
           <img className="homeimg1" src={logo7}></img>
         </div>
-        <Footer />
+        <Footer/>
       </div>
 
     );

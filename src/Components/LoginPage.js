@@ -5,7 +5,6 @@ import logo from './Navbar/img.jpg'
 import logo1 from '../Components/Navbar/imglock.png';
 import logo2 from './Navbar/humanimg.png';
 import { SocialIcon } from 'react-social-icons';
-// import { Button, Nav } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from './Footer/Footer';
 import Navbar from './Navbar/Navbar';
@@ -26,6 +25,10 @@ class LoginPage extends React.Component {
   
     
     }
+    confirmmail=(e)=>{
+      sessionStorage.setItem('change',this.state.employeeNo)
+      BrowserHistory.push('/Forgetpassword');
+  }
     onHandleChange=(e)=>{
         this.setState({[e.target.name]:e.target.value});
         }
@@ -99,7 +102,8 @@ class LoginPage extends React.Component {
           <input className="pwd1"  type="password" name="password" onChange={this.onHandleChange}  placeholder="password" /><br></br>
           <p className='red'>{this.state.passwordError}</p>
 
-          <button className="login" onClick={this.onHandleClick}>Login</button>
+          <button className="login4" onClick={this.onHandleClick}>Login</button><br></br>
+          <a onClick={this.confirmmail} className="forgetpassword">Forget Password</a>
           {/* <p className="header1">or forgot Password</p> */}
           <p className="header2">or sign in with</p>
         </form>
@@ -108,7 +112,7 @@ class LoginPage extends React.Component {
          <SocialIcon className="icons" url="http://facebook.com/jaketrent" />
          <SocialIcon className="icons" url="http://google.com/jaketrent" />
       </div>
-      <div className="footer6">
+      <div className="loginfooter">
         <Footer/>
       </div>
      

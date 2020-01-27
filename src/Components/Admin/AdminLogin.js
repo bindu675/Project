@@ -24,6 +24,10 @@ class AdminLogin extends React.Component {
     };
 
   }
+  confirmmail=(e)=>{
+    sessionStorage.setItem('change',this.state.employeeNo)
+    BrowserHistory.push('/Forgetpassword');
+}
   onHandleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   }
@@ -57,7 +61,7 @@ class AdminLogin extends React.Component {
       this.setState({ employeeNoError: "Please enter the valid employeeNo" })
     }
     else if (!this.state.password.match(/^[@#][A-Za-z0-9]{9,11}$/)) {
-      this.setState({ passwordError: "Please enter the valid password" })
+      this.setState({ passwordError: "" })
     }
 
     const options = {
@@ -91,11 +95,12 @@ class AdminLogin extends React.Component {
 
           <label className="pwd"></label>
           <img className="lockimg" src={logo1}></img>
-          <input className="pwd1" type="password" name="password" onChange={this.onHandleChange} placeholder="password" /><br></br>
+          <input className="pwd1" type="password" name="password" onChange={this.onHandleChange} placeholder="password" />
           <p className='red'>{this.state.passwordError}</p>
 
-          <button className="login" onClick={this.onHandleClick}>Login</button>
-          <p className="header1">or forgot Password</p>
+          <button className="login3" onClick={this.onHandleClick}>Login</button><br></br>
+          <a onClick={this.confirmmail} id="passwordforget">Forget Password</a>
+          {/* <p className="header1">or forgot Password</p> */}
           <p className="header2">or sign in with</p>
         </form>
         <div className="icons">

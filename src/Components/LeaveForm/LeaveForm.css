@@ -13,9 +13,15 @@
     margin-left: 7px;
 }
 
+.fromdate{
+  width: 345px;
+}
+.todate{
+  width: 345px;
+}
 .grid-container{
     display: grid;
-    grid-template-columns: 87px 342px 100px 318px 0px;
+    grid-template-columns: 87px 342px 100px 318px;
     grid-template-rows: 30px 30px 30px;
     grid-column-gap: 10px;
     grid-row-gap: 20px;
@@ -28,17 +34,20 @@
     margin-right:2px;
 }
 
+.footerform{
+  margin-top: 10px;
+}
 .reason{
-    margin-left: 15px;
-    margin-right: 300px;
-    margin-top: -38px;
-    width: 283px;
-    height: 81px;
+  margin-left: 48px;
+  margin-right: 300px;
+  margin-top: -34px;
+  width: 314px;
+  height: 81px;
 }
 .contact{
-  margin-left: 20px;
+  margin-left: 10px;
   margin-right: 388px;
-  width: 247px;
+  width: 238px;
   margin-top: 20px;
 }
 .holder5{

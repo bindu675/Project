@@ -11,7 +11,6 @@ class EmployeeList extends Component {
     };
   }
   componentDidMount() {
-    debugger;
     axios.get('http://localhost:9001/Desktop')
       .then(response => {
         debugger

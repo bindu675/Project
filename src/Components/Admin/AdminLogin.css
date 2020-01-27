@@ -6,7 +6,7 @@
 } 
  .login1{
      font-size: 22px;
-     margin-top: 29px;
+     margin-top: 22px;
      margin-left:79px;
      color: brown;
  }
@@ -40,14 +40,14 @@
     margin-top: 53px;
     margin-left: 82px;
 }
-.login{
+.login3{
     margin-top: 35px; 
     margin-left: 125px; 
     width: 250px;
     color: white;
     background-color:#1072e3;
 }
-.header1{
+#passwordforget{
     margin-left: 250px;
     font-size:13px
 }

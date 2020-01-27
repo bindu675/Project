@@ -13,7 +13,7 @@
 } 
  .login1{
     font-size: 32px;
-    margin-top: 14px;
+    margin-top: 3px;
     margin-left: 79px;
     color: #f70606;
  }
@@ -49,22 +49,22 @@
     margin-top: 1px;
     margin-left: 82px;
 }
-.login{
-    margin-top: 35px; 
-    margin-left: 125px; 
+.login4{
+    margin-top: 15px; 
+    margin-left: 120px; 
     width: 250px;
     color: white;
     background-color:#1072e3;
 }
-.header1{
+.forgetpassword{
     margin-left: 250px;
     font-size:13px;
-    color: white;
+    color:black;
+    font-size: 13px;
 }
 .header2{
     margin-right: 45px;
-    font-size:13px;
-    color:white;
+    font-size:13px; 
 }
 .emp1{
     border: none;
@@ -85,4 +85,3 @@
 .red{
     color: red;
 }
-

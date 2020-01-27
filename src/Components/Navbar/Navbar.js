@@ -9,24 +9,27 @@ import BrowserHistory from '../Utils/BrowserHistory';
 class Navbar extends Component {
   state={
     User:[],
-    employeename:''
+    visible:false,
+    employeename:'',
+    balance:''
     
   }
 
-  componentDidMount(){
-
-    if(sessionStorage.getItem('role')=='user')
-    {
-      this.setState({hide:true})
-    }
-    else if (sessionStorage.getItem('role')=='admin')
-    {
-      this.setState({show:true})
-    }
-  }
+  // componentDidMount(){
+   
+    
+  //   else if (sessionStorage.getItem('role')=='admin')
+  //   {
+  //     this.setState({show:true})
+  //   }
+  // }
 
   componentDidMount() {
-    debugger;
+    this.setState({balance:3})
+    if(sessionStorage.getItem('authentication')!=='')
+    {
+      this.setState({visible:true})
+    }
     axios.get('http://localhost:9001/Desktop')
       .then(response => {
         debugger
@@ -46,16 +49,19 @@ class Navbar extends Component {
     Cookies.remove('Firstname'); // fail!
     BrowserHistory.push('/LoginPage'); 
 
-   }  
+   } 
+   home=()=>{
+    BrowserHistory.push('/HomePage'); 
+   } 
   render() {
     return (
       <div>
         <div className="navbar">
           <img className="logo2" src={logo}></img>
+          <button hidden={!this.state.visible}  onClick={this.home}>Home</button>
           <a hidden={this.state.hide} className="nav1" href='#'></a>
            <a hidden={this.state.show} className="nav1" href='#'>{this.state.employeename}</a> 
-           {/* <a className="nav2" href='/LoginPage'>Signout</a>  */}
-           <button id="logbtn" onClick={this.Logout}>Logout</button>
+           <button hidden={!this.state.visible} id="logbtn" onClick={this.Logout}>Logout</button>
         </div>
       </div>
     );

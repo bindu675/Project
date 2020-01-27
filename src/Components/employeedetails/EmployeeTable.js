@@ -74,7 +74,6 @@ class EmployeeTable extends Component {
   }
 
   onSubmit = (e) => {
-    debugger
     e.preventDefault();
     const payload = {
       SIno: this.state.SIno,

@@ -89,7 +89,7 @@ class LeaveDirectory extends Component {
           </table>
 
           <div className="footer4">
-            <Footer/>
+            <Footer />
           </div>
         </div>
       </div>
