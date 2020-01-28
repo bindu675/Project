@@ -10,9 +10,7 @@ class LeaveSummary extends Component {
     list: []
   }
 
-
   componentDidMount() {
-
     const options = {
       url: 'http://localhost:9001/Leave',
       method: 'GET'
@@ -21,9 +19,6 @@ class LeaveSummary extends Component {
       .then(response => {
         console.log(response.data);
         this.setState({ list: response.data })
-        // sessionStorage.setItem('authentication', response.data.token)
-        // sessionStorage.setItem('userEmail', response.data.email)
-        // BrowserHistory.push('/HomePage')
       });
   }
   render() {
@@ -40,17 +35,17 @@ class LeaveSummary extends Component {
     })
     let itemList1 = this.state.list.map(item => {
       return (
-        <div className="tableitems121">
+        <div className="tableitem2">
           <tr>
-            <td className="tab121">{item.type}</td>
-             <td className="tab122">{item.balance}</td>
-            
+            <td className="table2">{item.type}</td>
+            <td className="tab1e3">{item.balance}</td>
+
           </tr>
         </div>
       )
     })
 
-    
+
 
 
 
@@ -61,14 +56,16 @@ class LeaveSummary extends Component {
           <Navbar />
         </div>
         <div>
+        <p className="leave_transaction">Leave Transaction</p>
+        <p className="leavebaltab">Leave Balance-2020</p>
           <table className="clsitems2">
             <tr>
               <th>type</th>
               <th>Balance</th>
             </tr>
-           
+
           </table>
-          <table className="tab106">
+          <table className="table6">
             <tr>
               {itemList1}
             </tr>

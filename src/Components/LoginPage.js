@@ -9,84 +9,84 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from './Footer/Footer';
 import Navbar from './Navbar/Navbar';
 import BrowserHistory from "./Utils/BrowserHistory";
-import {loginHandle} from '../Action/LoginAction';
-import Cookies from "js-cookie"
-import axios from "axios"
-class LoginPage extends React.Component {
+import { loginHandle } from '../Action/LoginAction';
+import Cookies from "js-cookie";
+import axios from "axios";
 
+class LoginPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-    employeeNo: '',
-    password: '',
-    employeeNoError: '',
-    passwordError: ''
+      employeeNo: '',
+      password: '',
+      employeeNoError: '',
+      passwordError: ''
     };
-  
-    
-    }
-    confirmmail=(e)=>{
-      sessionStorage.setItem('change',this.state.employeeNo)
-      BrowserHistory.push('/Forgetpassword');
+
+
   }
-    onHandleChange=(e)=>{
-        this.setState({[e.target.name]:e.target.value});
-        }
-    onHandleClicksCancel = (e) => {
+  confirmmail = (e) => {
+    sessionStorage.setItem('change', this.state.employeeNo)
+    BrowserHistory.push('/Forgetpassword');
+  }
+  onHandleChange = (e) => {
+    this.setState({ [e.target.name]: e.target.value });
+  }
+  onHandleClicksCancel = (e) => {
     // BrowserHistory.push('/HomePage'); 
-    }
-    
-    
-    onHandleClick = (e) => {
+  }
+
+
+  onHandleClick = (e) => {
     e.preventDefault();
     const payload = {
-    EmployeeNo: this.state.employeeNo,
-    password: this.state.password
+      EmployeeNo: this.state.employeeNo,
+      password: this.state.password
     }
     console.log(payload)
-    
-    if (this.state.employeeNo.length === 0 && this.state.password.length === 0 ) {
-    this.setState({
-    employeeNoError: "employeeNo is required",
-    passwordError: "Password is required"
-    
-    })
+
+    if (this.state.employeeNo.length === 0 && this.state.password.length === 0) {
+      this.setState({
+        employeeNoError: "employeeNo is required",
+        passwordError: "Password is required"
+
+      })
     }
     else if (this.state.employeeNo.length === 0) {
-    this.setState({ employeeNoError: "employeeno is required" })
+      this.setState({ employeeNoError: "employeeno is required" })
     }
     else if (this.state.password.length === 0) {
-    this.setState({ passwordError: "Password is required" })
+      this.setState({ passwordError: "Password is required" })
     }
     else if (!this.state.employeeNo.match(/^[A-Z0-9]{4,5}$/)) {
-    this.setState({employeeNoError: "Please enter the valid employeeno." })
+      this.setState({ employeeNoError: "Please enter the valid employeeno." })
     }
     else if (!this.state.password.match(/^[@#][A-Za-z0-9]{9,11}$/)) {
-    this.setState({ passwordError: "" })
+      this.setState({ passwordError: "" })
     }
-   
+
     const options = {
       url: 'http://localhost:9001/user_login',
       method: 'POST',
-      
+
       data: payload
-      };
-      axios(options)
+    };
+    axios(options)
       .then(response => {
-      console.log(response.status);
-      sessionStorage.setItem('authentication', response.data.token)
-      sessionStorage.setItem('Firstname', response.data.Firstname)
-      Cookies.set('Firstname', response.data.Firstname);
-      console.log(Cookies.get("Firstname"))
-      BrowserHistory.push('/HomePage')
-    });
+        console.log(response.status);
+        sessionStorage.setItem('authentication', response.data.token)
+        sessionStorage.setItem('Firstname', response.data.Firstname)
+        Cookies.set('Firstname', response.data.Firstname);
+        console.log(Cookies.get("Firstname"))
+        BrowserHistory.push('/HomePage')
+      });
   }
-    
+
   render() {
     return (
       <div className="logPage">
         <div>
-          <Navbar/>
+          <Navbar />
         </div>
         <p className="paraleave1">Leave Management System</p>
         <img className="logo1" src={logo}></img>
@@ -94,34 +94,33 @@ class LoginPage extends React.Component {
         <form>
           <label className="emp"></label>
           <img className="humanimg" src={logo2}></img>
-          <input className="emp1"  type="text" name="employeeNo" onChange={this.onHandleChange}  placeholder="EmployeeNo"/><br></br> 
-          <p className='red'>{this.state.employeeNoError}</p> 
+          <input className="emp1" type="text" name="employeeNo" onChange={this.onHandleChange} placeholder="EmployeeNo" /><br></br>
+          <p className='red'>{this.state.employeeNoError}</p>
 
           <label className="pwd"></label>
           <img className="lockimg" src={logo1}></img>
-          <input className="pwd1"  type="password" name="password" onChange={this.onHandleChange}  placeholder="password" /><br></br>
+          <input className="pwd1" type="password" name="password" onChange={this.onHandleChange} placeholder="password" /><br></br>
           <p className='red'>{this.state.passwordError}</p>
 
           <button className="login4" onClick={this.onHandleClick}>Login</button><br></br>
           <a onClick={this.confirmmail} className="forgetpassword">Forget Password</a>
-          {/* <p className="header1">or forgot Password</p> */}
           <p className="header2">or sign in with</p>
         </form>
-        <div className="icons">       
-         <SocialIcon className="icons" url="http://twitter.com/jaketrent" />
-         <SocialIcon className="icons" url="http://facebook.com/jaketrent" />
-         <SocialIcon className="icons" url="http://google.com/jaketrent" />
-      </div>
-      <div className="loginfooter">
-        <Footer/>
-      </div>
-     
+        <div className="icons">
+          <SocialIcon className="icons" url="http://twitter.com/jaketrent" />
+          <SocialIcon className="icons" url="http://facebook.com/jaketrent" />
+          <SocialIcon className="icons" url="http://google.com/jaketrent" />
+        </div>
+        <div className="loginfooter">
+          <Footer />
+        </div>
+
       </div>
     )
-    } 
+  }
 }
-const mapStateToProps=(state)=>{
-  const {password,employeeNo }=state.LoginReducer
-  return {password,employeeNo }
+const mapStateToProps = (state) => {
+  const { password, employeeNo } = state.LoginReducer
+  return { password, employeeNo }
 }
-export default connect(mapStateToProps,{loginHandle}) (LoginPage);
+export default connect(mapStateToProps, { loginHandle })(LoginPage);

@@ -12,6 +12,7 @@ import LoginPage from './Components/LoginPage';
 import EmployeeTable from './Components/employeedetails/EmployeeTable';
 import EmployeeList from './Components/employeedetails/EmployeeList';
 import Forgetpassword from './Components/ForgetPassword/Forgetpassword';
+import Leaveviewsummary from './Components/Leaveviewsummary/Leaveviewsummary';
 
 const PrivateRoute = ({ component: IncomingComponent, ...rest }) => (
   <Route
@@ -39,6 +40,7 @@ function App() {
           <Route exact path='/EmployeeList' component={EmployeeList}></Route>
           <Route exact path='/EmployeeTable' component={EmployeeTable}></Route>
           <Route exact path='/Forgetpassword' component={Forgetpassword}></Route>
+          <Route exact path='/Leaveviewsummary' component={Leaveviewsummary}></Route>
         </switch>
       </Router>
     </div>

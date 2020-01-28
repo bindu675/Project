@@ -7,17 +7,17 @@ import BrowserHistory from '../Utils/BrowserHistory';
 
 
 class Navbar extends Component {
-  state={
-    User:[],
-    visible:false,
-    employeename:'',
-    balance:''
-    
+  state = {
+    User: [],
+    visible: false,
+    employeename: '',
+    balance: ''
+
   }
 
   // componentDidMount(){
-   
-    
+
+
   //   else if (sessionStorage.getItem('role')=='admin')
   //   {
   //     this.setState({show:true})
@@ -25,43 +25,41 @@ class Navbar extends Component {
   // }
 
   componentDidMount() {
-    this.setState({balance:3})
-    if(sessionStorage.getItem('authentication')!=='')
-    {
-      this.setState({visible:true})
+    if (sessionStorage.getItem('authentication') !== '') {
+      this.setState({ visible: true })
     }
     axios.get('http://localhost:9001/Desktop')
       .then(response => {
         debugger
-        this.setState({Users: response.data});
+        this.setState({ Users: response.data });
       })
       .catch(function (error) {
-      console.log(error);
+        console.log(error);
       })
-      // console.log(Cookies.get("Firstname"))
-       var name=Cookies.get('Firstname');
-       this.setState({employeename:name})
+    // console.log(Cookies.get("Firstname"))
+    var name = Cookies.get('Firstname');
+    this.setState({ employeename: name })
 
   }
-  Logout=()=>{
+  Logout = () => {
     sessionStorage.setItem('authentication', "")
     sessionStorage.setItem('Firstname', "")
     Cookies.remove('Firstname'); // fail!
-    BrowserHistory.push('/LoginPage'); 
+    BrowserHistory.push('/LoginPage');
 
-   } 
-   home=()=>{
-    BrowserHistory.push('/HomePage'); 
-   } 
+  }
+  home = () => {
+    BrowserHistory.push('/HomePage');
+  }
   render() {
     return (
       <div>
         <div className="navbar">
           <img className="logo2" src={logo}></img>
-          <button hidden={!this.state.visible}  onClick={this.home}>Home</button>
+          <button id="homebtn" hidden={!this.state.visible} onClick={this.home}>Home</button>
           <a hidden={this.state.hide} className="nav1" href='#'></a>
-           <a hidden={this.state.show} className="nav1" href='#'>{this.state.employeename}</a> 
-           <button hidden={!this.state.visible} id="logbtn" onClick={this.Logout}>Logout</button>
+          <a hidden={this.state.show} className="nav1" href='#'>{this.state.employeename}</a>
+          <button hidden={!this.state.visible} id="logbtn" onClick={this.Logout}>Logout</button>
         </div>
       </div>
     );
