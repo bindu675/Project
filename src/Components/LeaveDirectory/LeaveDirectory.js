@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './LeaveDirectory.css';
-import Navbar from '../Navbar/Navbar';
+import Navbar2 from '../Admin/Navbar2';
 import Footer from '../Footer/Footer';
 // import BrowserHistory from "../Utils/BrowserHistory";
 import axios from "axios"
@@ -11,7 +11,7 @@ class LeaveDirectory extends Component {
   }
   approve = (id) => {
     let addedItem = this.state.list.find(item => item._id === id)
-    addedItem.Status = "approve"
+    addedItem.Action = "approve"
     const options = {
       url: ` http://localhost:9001/Leave/${id}`,
       method: 'PUT',
@@ -23,7 +23,7 @@ class LeaveDirectory extends Component {
   }
   Reject = (id) => {
     let addedItem = this.state.list.find(item => item._id === id)
-    addedItem.Status = "reject"
+    addedItem.Action = "reject"
     const options = {
       url: ` http://localhost:9001/Leave/${id}`,
       method: 'PUT',
@@ -46,7 +46,7 @@ class LeaveDirectory extends Component {
         this.setState({ list: response.data })
         // sessionStorage.setItem('authentication', response.data.token)
         // sessionStorage.setItem('userEmail', response.data.email)
-        // BrowserHistory.push('/HomePage')
+        
       });
   }
   render() {
@@ -54,12 +54,13 @@ class LeaveDirectory extends Component {
       return (
         <div className="card1" key={item._id}>
 
-          <tr>{item._id}
+          <tr>
+            <td className="tabsi">{item.SIno}</td>
             <td className="tab4">{item.empid}</td>
             <td className="tab5">{item.employeeName}</td>
             <td className="tab6">{item.Reason}</td>
             <td className="tab7">{item.No_of_days}</td>
-            <td className="tab8">{item.Status}</td>
+            <td className="tab8">{item.Action}</td>
             <td className="tab9"><button className="approvbtn" onLoad={this.approve} onClick={this.approve.bind(this, item._id)}>Approve</button><button onLoad={this.Reject} onClick={this.Reject.bind(this, item._id)}>Reject</button></td>
           </tr>
 
@@ -69,17 +70,18 @@ class LeaveDirectory extends Component {
     return (
       <div>
         <div>
-          <Navbar />
-        </div>
+          <Navbar2/>
+        </div><br/>
         <div claitemListsName="empdir">
           <table>
             <tr>
-              <th></th>
+              <th>SIno.</th>
               <th>EmpId</th>
               <th>EmpName</th>
               <th>Reason</th>
               <th>No_of_days</th>
-              <th>Status</th>
+              <th>Leave_status</th>
+              <th>Action</th>
             </tr>
           </table>
           <table className="tab10">

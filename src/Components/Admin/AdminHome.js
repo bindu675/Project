@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './Admin.css'
-import Navbar from '../Navbar/Navbar';
+import Navbar2 from '../Admin/Navbar2';
 import Footer from '../Footer/Footer';
 import logo5 from '../Navbar/humanimg.png';
 import logo7 from '../Navbar/homeimg1.jpeg';
 import axios from "axios"
 
-class Admin extends Component {
+class AdminHome extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -41,9 +41,6 @@ class Admin extends Component {
     axios(options)
       .then(response => {
         console.log(response.status);
-        // sessionStorage.setItem('authentication', response.data.token)
-        // sessionStorage.setItem('userEmail', response.data.email)
-        // BrowserHistory.push('/Admin')
         window.location.reload()
       });
   }
@@ -51,7 +48,7 @@ class Admin extends Component {
     return (
       <div>
         <div>
-          <Navbar />
+          <Navbar2/>
         </div><br></br>
 
         <div className="container2">
@@ -59,9 +56,9 @@ class Admin extends Component {
           <input className="holder" type="text" name="feedtext" placeholder=" " onChange={this.onHandleChange}></input><br></br>
           <button className="button" onClick={this.onHandleClick}>Update</button>
           <div className="feedstext12">
-          {this.state.usersview.map(name => {
+            {this.state.usersview.map(name => {
               return (
-                <table style={{color:"black"}}>
+                <table style={{ color: "black" }}>
                   <tr>
                     <td>{name.feedtext}</td>
                   </tr>
@@ -70,15 +67,15 @@ class Admin extends Component {
               )
             }
             )}
-            </div>
+          </div>
         </div>
 
         <input className="user" type="text" placeholder=" "></input>
         <img className="humanimg1" src={logo5}></img>
         <div class="vertical-menu">
           <a className="feed1" href="#">Feeds</a>
-          <a className="feed1" href="LeaveDirectory">Employee_Leave_Details</a>
-          <a className="feed1" href="EmployeeTable">EmployeeDirectory</a>
+          <a className="feed1" href="LeaveDirectory">Employee Leave Details</a>
+          <a className="feed1" href="EmployeeList">Employee Directory</a>
         </div>
 
 
@@ -91,9 +88,6 @@ class Admin extends Component {
               a day go
             </div>
           </div>
-          {/* <div class='admincontainer'>
-            <div class="event1">To Events</div>
-            <div class="day1">a day go</div> */}
           <div className="paragraph12">Happy birthdy Arun Kumar M R,Have a great year ahead</div>
           <img className="homeimg12" src={logo7}></img>
         </div>
@@ -107,4 +101,4 @@ class Admin extends Component {
   }
 }
 
-export default Admin;
+export default AdminHome;

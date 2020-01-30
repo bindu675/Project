@@ -8,7 +8,7 @@ class Leaveviewsummary extends Component {
     balance: ''
   }
   componentDidMount() {
-    this.setState({ balance: 3 })
+    this.setState({ balance: 1 })
     const options = {
       url: 'http://localhost:9001/Leave',
       method: 'GET'

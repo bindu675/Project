@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Navbar.css';
-import logo from './img.jpg';
+import logo from '../Navbar/img.jpg';
 import Cookies from "js-cookie"
 import axios from "axios"
 import BrowserHistory from '../Utils/BrowserHistory';
@@ -20,7 +20,6 @@ class Navbar extends Component {
     }
     axios.get('http://localhost:9001/Desktop')
       .then(response => {
-        debugger
         this.setState({ Users: response.data });
       })
       .catch(function (error) {
@@ -38,18 +37,20 @@ class Navbar extends Component {
     BrowserHistory.push('/LoginPage');
 
   }
-  home = () => {
-    BrowserHistory.push('/HomePage');
+//   home = () => {
+//     BrowserHistory.push('/HomePage');
+//   }
+  AdminHome=()=>{
+    BrowserHistory.push('/AdminHome');
   }
 
   render() {
     return (
       <div>
         <div className="navbar">
-          <a href="HomePage">
+         <a href="AdminHome">
           <img className="logo2" src={logo}></img>
           </a>
-          <button id="homebtn" hidden={!this.state.visible} onClick={this.home}>Home</button>
           {/* <button id="homebtn" hidden={!this.state.visible} onClick={this.AdminHome}>AdminHome</button> */}
           <a hidden={this.state.hide} className="nav1" href='#'></a>
           <a hidden={this.state.show} className="nav1" href='#'>{this.state.employeename}</a>

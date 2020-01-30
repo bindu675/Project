@@ -5,10 +5,9 @@ import logo from '../Navbar/img.jpg'
 import logo1 from '../../Components/Navbar/imglock.png';
 import logo2 from '../Navbar/humanimg.png';
 import { SocialIcon } from 'react-social-icons';
-// import { Button, Nav } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from '../Footer/Footer';
-import Navbar from '../Navbar/Navbar';
+import Navbar2 from '../Admin/Navbar2';
 import BrowserHistory from "../Utils/BrowserHistory";
 import axios from "axios"
 import { loginHandle } from '../../Action/LoginAction';
@@ -24,15 +23,14 @@ class AdminLogin extends React.Component {
     };
 
   }
-  confirmmail=(e)=>{
-    sessionStorage.setItem('change',this.state.employeeNo)
+  confirmmail = (e) => {
+    sessionStorage.setItem('change', this.state.employeeNo)
     BrowserHistory.push('/Forgetpassword');
-}
+  }
   onHandleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   }
   onHandleClicksCancel = (e) => {
-    // BrowserHistory.push('/HomePage'); 
   }
 
 
@@ -74,7 +72,7 @@ class AdminLogin extends React.Component {
         console.log(response.status);
         sessionStorage.setItem('authentication', response.data.token)
         sessionStorage.setItem('userEmail', response.data.email)
-        BrowserHistory.push('/Admin')
+        BrowserHistory.push('/AdminHome')
       });
   }
 
@@ -83,7 +81,7 @@ class AdminLogin extends React.Component {
     return (
       <div className="logPage">
         <div>
-          <Navbar />
+          <Navbar2/>
         </div>
         <img className="logo1" src={logo}></img>
         <h3 className="login1">Login</h3>
@@ -100,7 +98,6 @@ class AdminLogin extends React.Component {
 
           <button className="login3" onClick={this.onHandleClick}>Login</button><br></br>
           <a onClick={this.confirmmail} id="passwordforget">Forget Password</a>
-          {/* <p className="header1">or forgot Password</p> */}
           <p className="header2">or sign in with</p>
         </form>
         <div className="icons">
@@ -108,7 +105,7 @@ class AdminLogin extends React.Component {
           <SocialIcon className="icons" url="http://facebook.com/jaketrent" />
           <SocialIcon className="icons" url="http://google.com/jaketrent" />
         </div>
-        <div className="footer6">
+        <div>
           <Footer />
         </div>
       </div>

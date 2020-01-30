@@ -17,20 +17,30 @@ table {
     background-color: white;
   }
  .tab4{
-  width: 118px;
+  width: 140px;
+  text-align: center;
+ }
+ .tabsi{
+  width: 128px;
+  text-align: center;
  }
  .tab5{
-  width: 219px;
+  width: 211px;
+  text-align: center;
  }
  .tab6{
-  width: 217px;
+  width: 166px;
+  text-align: center;
  }
  .tab7{
-  width: 211px;
+  width: 237px;
+  text-align: center;
  }
  .tab8{
   width: 118px;
+  text-align: center;
  }
  .tab9{
-  width: 211px;
+  width: 293px;
+  text-align: center;
  }

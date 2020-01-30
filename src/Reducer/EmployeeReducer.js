@@ -16,7 +16,8 @@ export default (state = initialState, action) => {
 
         case "REGISTER": {
             return {
-                ...state, SIno: action.payload.SIno,
+                ...state, 
+                SIno: action.payload.SIno,
                 EmpId: action.payload.EmpId,
                 FirstName: action.payload.FirstName,
                 LastName: action.payload.LastName,

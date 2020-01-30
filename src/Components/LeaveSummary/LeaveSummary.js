@@ -45,19 +45,13 @@ class LeaveSummary extends Component {
       )
     })
 
-
-
-
-
-
     return (
       <div>
         <div>
           <Navbar />
         </div>
-        <div>
         <p className="leave_transaction">Leave Transaction</p>
-        <p className="leavebaltab">Leave Balance-2020</p>
+          <p className="leavebaltab">Leave Balance-2020</p>
           <table className="clsitems2">
             <tr>
               <th>type</th>
@@ -70,7 +64,7 @@ class LeaveSummary extends Component {
               {itemList1}
             </tr>
           </table>
-          <button className="summarybtn">View summary</button>
+          {/* <button className="summarybtn">View summary</button> */}
           <table className="clsitems1">
             <tr>
               <th>type</th>
@@ -88,7 +82,7 @@ class LeaveSummary extends Component {
             <Footer />
           </div>
         </div>
-      </div>
+     
 
     );
   }

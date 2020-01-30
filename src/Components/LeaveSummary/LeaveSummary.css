@@ -17,7 +17,7 @@
   .clsitems1{
     width: 500px;
     margin-left: 600px;
-    margin-top: -170px;
+    margin-top: -85px;
   }
   .clsitems2{
     width: 500px;
@@ -31,22 +31,22 @@
     padding: 8px;
   }
   
-  tr:nth-child(even) {
+  /* tr:nth-child(even) {
     background-color: #dddddd;
-  }
+  } */
  
  .tab16{
   width: 118px;
  }
  .tab11{
-  width: 211px;
+  width: 253px;
   text-align: center;
  }
  .tab12{
   width: 430px;
  }
  .tab14{
-  width: 308px;
+  width: 367px;
   text-align: center;
  }
  .tab15{
@@ -63,25 +63,26 @@
    margin-left: 10px;
  }
  .table2{
-  width: 190px;
+  width: 193px;
   text-align: center;
  }
  .tab1e3{
-  width: 309px;
+  width: 306px;
   text-align: center;
  }
- .summarybtn{
+ /* .summarybtn{
   width: 200px;
   margin-top: 20px;
   margin-right: 777px;
   border-radius: 30px;
   background-color: lightblue;
- }
+ } */
  .leavebaltab{
    width: 200px;
    background-color: lightblue;
    border-radius: 30px;
    margin-left: 150px;
+   margin-top: -43px;
  }
  .leave_transaction{
   width: 200px;

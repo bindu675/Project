@@ -20,10 +20,11 @@
 
 .leaveapp{
   margin-left: 124px;
+  font-size: 33px;
 }
 
 .footerform{
-  margin-top: 10px;
+  margin-top: -30px;
 }
 .reason{
  
@@ -48,7 +49,6 @@
   border-radius: 31px;
   background-color:#1072e3;
   width: 109px;
- 
   margin-top: 10px;
 }
 .red{
@@ -56,16 +56,16 @@
 }
 .container_leave_dasboard{
  display: grid;
- grid-template-columns:300px 300px ;
+ grid-template-columns:300px  300px 300px ;
  grid-row-gap:30px;
  
 }
 .days_bal{
   display: grid;
-  grid-template-columns: 680px;;
-  margin-left: 32px;;
+  grid-template-columns: 680px;
+  margin-left: 32px;
   grid-gap:30px;
 }
-form{
+/* form{
 text-align: center;
-}
+} */

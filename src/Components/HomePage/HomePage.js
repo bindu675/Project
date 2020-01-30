@@ -4,7 +4,7 @@ import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import logo5 from '../Navbar/humanimg.png'
 import logo7 from '../Navbar/homeimg1.jpeg'
-import axios from "axios"                                                       
+import axios from "axios"
 
 class HomePage extends Component {
   constructor(props) {
@@ -94,7 +94,7 @@ class HomePage extends Component {
           <div className="paragraph">Happy birthdy Arun Kumar M R,Have a great year ahead</div>
           <img className="homeimg1" src={logo7}></img>
         </div>
-        <Footer/>
+        <Footer />
       </div>
 
     );

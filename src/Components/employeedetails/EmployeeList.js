@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+import BrowserHistory from "../Utils/BrowserHistory";
 import axios from 'axios';
+import './EmployeeList.css';
 import TableRow from './TableRow';
+import Navbar2 from '../Admin/Navbar2';
+import Footer from '../Footer/Footer';
 
 
 class EmployeeList extends Component {
@@ -13,11 +17,11 @@ class EmployeeList extends Component {
   componentDidMount() {
     axios.get('http://localhost:9001/Desktop')
       .then(response => {
-        debugger
         this.setState({ Users: response.data });
       })
       .catch(function (error) {
         console.log(error);
+        BrowserHistory.push('/EmployeeTable')
       })
   }
   tabRow() {
@@ -29,23 +33,27 @@ class EmployeeList extends Component {
     return (
 
       <div>
+        <Navbar2/>
         <p>Employee List</p>
+        <a href="EmployeeTable" className="emplist_add">AddEmployee</a>
         <table className="table" style={{ marginTop: 50 }}>
           <tr>
-          <th>SIno</th>
-          <th>EmpId</th>
-          <th>FirstName</th>
-          <th>LastName</th>
-          <th>Date_of_Birth</th>
-          <th>Sex</th>
-          <th>JoiningDate</th>
-          <th>email_id</th>
-          <th>MobileNo</th>
-          <th colSpan="2">Action</th>
+            <th>SIno</th>
+            <th>EmpId</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Date_of_Birth</th>
+            <th>Sex</th>
+            <th>JoiningDate</th>
+            <th>email_id</th>
+            <th>MobileNo</th>
+            <th colSpan="2">Action</th>
           </tr>
           {this.tabRow()}
         </table>
-
+        <div className="emplst_footer">
+      <Footer/>
+      </div>
       </div>
     );
   }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Footer from '../Footer/Footer'
-import Navbar from '../Navbar/Navbar';
+import Navbar2 from '../Admin/Navbar2';
 import BrowserHistory from "../Utils/BrowserHistory";
 import { questionHandle } from '../../Action/DesktopAction';
 import './EmployeeTable.css';
@@ -74,7 +74,8 @@ class EmployeeTable extends Component {
   }
 
   onSubmit = (e) => {
-    e.preventDefault();
+    debugger;
+    // e.preventDefault();
     const payload = {
       SIno: this.state.SIno,
       EmpId: this.state.EmpId,
@@ -86,6 +87,7 @@ class EmployeeTable extends Component {
       email_id: this.state.email_id,
       MobileNo: this.state.MobileNo
     };
+    console.log(payload)
 
     this.props.questionHandle(payload);
     BrowserHistory.push('./EmployeeList');
@@ -95,7 +97,7 @@ class EmployeeTable extends Component {
       <div>
 
         <div>
-          <Navbar />
+          <Navbar2/>
         </div>
 
         <div>
@@ -139,7 +141,7 @@ class EmployeeTable extends Component {
 
             <div>
               <label className="empnum9"> Date_of_Birth</label>
-              <input type="text"
+              <input type="date"
                 className="empnum17"
                 value={this.state.Date_of_Birth}
                 onChange={this.onChangeDate_of_Birth}
@@ -157,7 +159,7 @@ class EmployeeTable extends Component {
 
             <div>
               <label className="empnum12"> JoiningDate</label>
-              <input type="text"
+              <input type="date"
                 className="empnum13"
                 value={this.state.JoiningDate}
                 onChange={this.onChangeJoiningDate}
@@ -188,7 +190,7 @@ class EmployeeTable extends Component {
             </div>
           </form>
         </div>
-        <div className="footer10">
+        <div className="employee_footer">
           <Footer />
         </div>
       </div>
